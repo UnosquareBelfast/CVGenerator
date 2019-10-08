@@ -1,6 +1,6 @@
-var path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -38,7 +38,7 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      },
+      }
     ]
   },
   plugins: [
