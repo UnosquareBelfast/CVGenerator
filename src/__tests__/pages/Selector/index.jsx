@@ -2,7 +2,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-import Selector from ".";
+import Selector from "../../../pages/Selector";
 
 let container = null;
 beforeEach(() => {
@@ -18,7 +18,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders with no events", () => {
+it("renders with hello world", () => {
   act(() => {
     render(<Selector />, container);
   });
