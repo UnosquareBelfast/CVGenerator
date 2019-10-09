@@ -4,23 +4,25 @@ import { act } from "react-dom/test-utils";
 
 import Selector from "../../../pages/Selector";
 
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
-
-it("renders with hello world", () => {
-  act(() => {
-    render(<Selector />, container);
+describe("SelectParamsForCVTemplate", () => {
+  let container = null;
+  beforeEach(() => {
+    // setup a DOM element as a render target
+    container = document.createElement("div");
+    document.body.appendChild(container);
   });
-  expect(container.textContent).toBe("Hello world!");
+
+  afterEach(() => {
+    // cleanup on exiting
+    unmountComponentAtNode(container);
+    container.remove();
+    container = null;
+  });
+
+  it("renders with hello world", () => {
+    act(() => {
+      render(<Selector />, container);
+    });
+    expect(container.textContent).toBe("Hello world!");
+  });
 });
