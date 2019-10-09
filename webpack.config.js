@@ -6,7 +6,7 @@ module.exports = {
   mode: "development",
   devtool: "eval",
   cache: true,
-  entry: "./src/index.js",
+  entry: "./src/index.jsx",
   output: {
     filename: "[hash].bundle.js",
     path: path.resolve(__dirname, "dist"),
