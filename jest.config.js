@@ -9,13 +9,6 @@ module.exports = {
     '^Pages(.*)$': '<rootDir>/src/pages$1',
     '^Store(.*)$': '<rootDir>/src/store$1',
   },
-<<<<<<< HEAD
-  testMatch: [
-    "<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/**/*.(js|jsx|ts|tsx))"
-  ],
-  transformIgnorePatterns: ["<rootDir>/node_modules/"]
-=======
   testMatch: ['<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/*.(js|jsx|ts|tsx))'],
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
->>>>>>> Fix prettier config and format code
 };
