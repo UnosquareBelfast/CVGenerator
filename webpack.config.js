@@ -14,6 +14,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      Pages: path.resolve(__dirname, 'src/pages/')
+    },
   },
   module: {
     rules: [
@@ -30,6 +33,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        use: 'react-hot-loader/webpack',
+        include: /node_modules/
       },
       {
         test: /\.html$/,
