@@ -10,7 +10,7 @@ module.exports = {
     "^Store(.*)$": "<rootDir>/src/store$1"
   },
   testMatch: [
-    "<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+    "<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/**/*.(js|jsx|ts|tsx))"
   ],
   transformIgnorePatterns: ["<rootDir>/node_modules/"]
 };
