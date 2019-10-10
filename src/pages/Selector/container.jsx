@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const SelectorContainer = Wrapped =>
   class Selector extends React.Component {

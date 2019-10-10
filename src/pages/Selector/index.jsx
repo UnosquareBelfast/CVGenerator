@@ -1,5 +1,5 @@
-import React from "react";
-import container from "./container";
+import React from 'react';
+import container from './container';
 
 const Selector = () => {
   return <div>Hello world!</div>;

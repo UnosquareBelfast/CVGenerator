@@ -5,11 +5,12 @@
   "main": "index.jsx",
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js",
-    "start:dev": "webpack-dev-server --mode development --config webpack.config.js",
+    "start:dev": "webpack-dev-server --inline --hot --mode development --config webpack.config.js",
     "format": "prettier --write '**/*.{html,js,jsx}'",
     "lint": "eslint '**/*.{js,jsx}'",
     "eslint-check": "eslint --print-config '**/*.{html,js,jsx}' | eslint-config-prettier-check",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,8 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.15"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
