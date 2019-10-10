@@ -1,28 +1,12 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { shallow } from "enzyme";
+import "../../setupTests";
 
 import Selector from "../../../pages/Selector";
 
 describe("SelectParamsForCVTemplate", () => {
-  let container = null;
-  beforeEach(() => {
-    // setup a DOM element as a render target
-    container = document.createElement("div");
-    document.body.appendChild(container);
-  });
-
-  afterEach(() => {
-    // cleanup on exiting
-    unmountComponentAtNode(container);
-    container.remove();
-    container = null;
-  });
-
   it("renders with hello world", () => {
-    act(() => {
-      render(<Selector />, container);
-    });
-    expect(container.textContent).toBe("Hello world!");
+    const wrapper = shallow(<Selector />);
+    expect(wrapper.shallow().text()).toEqual("Hello world!");
   });
 });
