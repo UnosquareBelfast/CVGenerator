@@ -4,4 +4,4 @@ import Selector from './pages/Selector';
 
 const App = () => <Selector />;
 
-export default(hot(App));
+export default hot(App);
