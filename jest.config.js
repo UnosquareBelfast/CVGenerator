@@ -1,16 +1,21 @@
 module.exports = {
-  moduleFileExtensions: ["js", "jsx"],
+  moduleFileExtensions: ['js', 'jsx'],
   transform: {
-    "^.+\\.(js|jsx)?$": "babel-jest"
+    '^.+\\.(js|jsx)?$': 'babel-jest',
   },
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
-    "^Components(.*)$": "<rootDir>/src/components$1",
-    "^Pages(.*)$": "<rootDir>/src/pages$1",
-    "^Store(.*)$": "<rootDir>/src/store$1"
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^Components(.*)$': '<rootDir>/src/components$1',
+    '^Pages(.*)$': '<rootDir>/src/pages$1',
+    '^Store(.*)$': '<rootDir>/src/store$1',
   },
+<<<<<<< HEAD
   testMatch: [
     "<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/**/*.(js|jsx|ts|tsx))"
   ],
   transformIgnorePatterns: ["<rootDir>/node_modules/"]
+=======
+  testMatch: ['<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/*.(js|jsx|ts|tsx))'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+>>>>>>> Fix prettier config and format code
 };
