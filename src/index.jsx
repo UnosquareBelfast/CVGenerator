@@ -1,7 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Selector from "./pages/Selector";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const app = <Selector />;
+import App from './App';
 
-ReactDOM.render(app, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
