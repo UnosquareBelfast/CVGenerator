@@ -1,5 +1,3 @@
-# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
-
 version: '3'
 
 # Define services
@@ -7,5 +5,7 @@ services:
   # Frontend Service 
   web:
     build: .
+    image: cvgenerator-fe
+
     ports:
       - "80:80"
