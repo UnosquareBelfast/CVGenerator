@@ -1,0 +1,11 @@
+version: '3'
+
+# Define services
+services:
+  # Frontend Service 
+  web:
+    build: .
+    image: cvgenerator-fe
+
+    ports:
+      - "80:80"
