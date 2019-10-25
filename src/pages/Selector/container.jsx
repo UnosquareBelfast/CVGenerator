@@ -6,7 +6,7 @@ import axios from 'axios';
 const SelectorContainer = Wrapped =>
   class Selector extends React.Component {
     helloWorldOnClick = () => {
-      axios.get('http://localhost:8080/api/hello/1').then(response => {
+      axios.get('http://localhost:8081/api/hello/1').then(response => {
         console.log('RESPONSE');
         console.log(response.data);
         console.log(response.status);
