@@ -1,13 +1,29 @@
 import React from 'react';
+import { employees, clients, templates } from 'Utilities/options';
 
-// temporarily disabling this rule until the function is fleshed out
-/* eslint-disable react/prefer-stateless-function */
 const SelectorContainer = Wrapped =>
   class Selector extends React.Component {
+    employeeOptions = employees.map(employee => {
+      return { value: employee, label: employee };
+    });
+
+    clientOptions = clients.map(client => {
+      return { value: client, label: client };
+    });
+
+    templateOptions = templates.map(template => {
+      return { value: template, label: template };
+    });
+
     render() {
-      return <Wrapped />;
+      return (
+        <Wrapped
+          employeeOptions={this.employeeOptions}
+          clientOptions={this.clientOptions}
+          templateOptions={this.templateOptions}
+        />
+      );
     }
   };
 
 export default SelectorContainer;
-/* eslint-enable react/prefer-stateless-function */
