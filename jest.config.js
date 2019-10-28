@@ -9,6 +9,6 @@ module.exports = {
     '^Pages(.*)$': '<rootDir>/src/pages$1',
     '^Store(.*)$': '<rootDir>/src/store$1',
   },
-  testMatch: ['<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/*.(js|jsx|ts|tsx))'],
+  testMatch: ['<rootDir>/src/__tests__/**/*.js?(x)'],
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 };
