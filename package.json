@@ -18,9 +18,11 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "setupFiles": [
-    "./src/setupTests.js"
-  ],
+  "jest": {
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fillips-uno/CVGenerator-frontend.git"

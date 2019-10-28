@@ -1,13 +1,17 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import Selector from './pages/Selector';
+import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyle } from './styled';
+import Selector from 'Pages';
+
+import { GlobalStyle, theme } from './styled';
 
 const App = () => (
   <div>
-    <GlobalStyle />
-    <Selector />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Selector />
+    </ThemeProvider>
   </div>
 );
 

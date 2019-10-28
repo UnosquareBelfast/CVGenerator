@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../../../setupTests';
+import 'SetupTests';
 
-import Selector from '../../../pages/Selector';
+import Selector from 'Pages';
 
 describe('SelectParamsForCVTemplate', () => {
   it('renders with hello world', () => {

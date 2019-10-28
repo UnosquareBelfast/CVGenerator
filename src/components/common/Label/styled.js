@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledLabel = styled.label`
-  font-weight: bold;
+  display: flex;
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   width: 500px;
 
   div {
-    color: red;
-    display: inline-block;
-    margin-left: -5px;
+    color: ${({ theme }) => theme.colors.errorRed};
   }
 `;
 export default StyledLabel;

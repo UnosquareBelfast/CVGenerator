@@ -1,6 +1,6 @@
 import React from 'react';
+import Label from 'Common';
 import container from './container';
-import Label from '../../components/common/Label';
 
 const Selector = () => {
   return (

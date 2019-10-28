@@ -5,6 +5,7 @@ export const theme = {
     green: '#67db7e',
     blue: '#67b7db',
     yellow: '#65db67',
+    errorRed: '#ff0000',
   },
   fonts: {
     main: 'Open Sans',

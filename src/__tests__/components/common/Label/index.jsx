@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import context from 'jest-context';
-import '../../../../setupTests';
+import 'SetupTests';
 
-import Label from '../../../../components/common/Label';
+import Label from 'Common';
 
 describe('Label component', () => {
   context('Required prop value is true', () => {
