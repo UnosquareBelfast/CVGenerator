@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledSelect = styled.div`
+export const StyledSelect = styled.div`
   max-width: 500px;
   min-width: 280px;
   padding: 2em;
@@ -8,6 +8,21 @@ const StyledSelect = styled.div`
   label {
     padding-bottom: 5px;
   }
+
+  .selectedDiv {
+    margin-top: 200px;
+  }
 `;
 
-export default StyledSelect;
+export const reactSelectCustomStyle = {
+  option: provided => {
+    return {
+      ...provided,
+      padding: 10,
+    };
+  },
+  control: provided => ({
+    ...provided,
+    marginTop: 10,
+  }),
+};
