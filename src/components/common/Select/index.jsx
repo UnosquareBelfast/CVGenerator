@@ -3,12 +3,14 @@ import { PropTypes as PT } from 'prop-types';
 import Select from 'react-select';
 import { Label } from 'Common';
 
+import StyledSelect from './styled';
+
 const SelectComponent = ({ text, isRequired }) => {
   return (
-    <div>
+    <StyledSelect>
       <Label text={text} isRequired={isRequired} />
       <Select isDisabled={false} isSearchable />
-    </div>
+    </StyledSelect>
   );
 };
 
