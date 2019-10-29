@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import context from 'jest-context';
 import 'SetupTests';
 
-import Label from 'Common';
+import { Label } from 'Common';
 
 describe('Label component', () => {
   context('Required prop value is true', () => {

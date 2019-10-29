@@ -1,3 +1,4 @@
 import Label from './Label';
+import SelectComponent from './Select';
 
-export default Label;
+export { Label, SelectComponent };

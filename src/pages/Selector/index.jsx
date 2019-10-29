@@ -1,11 +1,11 @@
 import React from 'react';
-import Label from 'Common';
+import { SelectComponent } from 'Common';
 import container from './container';
 
 const Selector = () => {
   return (
     <div>
-      <Label text="Hello World" isRequired />
+      <SelectComponent text="Select Label" isRequired />
     </div>
   );
 };
