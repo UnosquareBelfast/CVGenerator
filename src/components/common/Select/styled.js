@@ -15,14 +15,14 @@ export const StyledSelect = styled.div`
 `;
 
 export const reactSelectCustomStyle = {
-  option: provided => {
-    return {
-      ...provided,
-      padding: 10,
-    };
-  },
-  control: provided => ({
-    ...provided,
-    marginTop: 10,
-  }),
+  // option: provided => {
+  //   return {
+  //     ...provided,
+  //     padding: 10,
+  //   };
+  // },
+  // control: provided => ({
+  //   ...provided,
+  //   marginTop: 10,
+  // }),
 };

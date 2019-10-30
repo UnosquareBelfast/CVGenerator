@@ -15,18 +15,17 @@ class SelectComponent extends React.Component {
   render() {
     const { text, isRequired, name, isSearchable, options, isDisabled } = this.props;
     const { selected } = this.state;
-    console.log('selected: ', selected);
 
     return (
       <StyledSelect>
         <Label text={text} isRequired={isRequired} />
         <Select
-          styles={reactSelectCustomStyle}
           isDisabled={isDisabled}
           name={name}
           isSearchable={isSearchable}
           options={options}
           onChange={this.handleOnChange}
+          value={selected}
         />
         <div className="selectedDiv">Selected option: {selected && selected.label}</div>
       </StyledSelect>
