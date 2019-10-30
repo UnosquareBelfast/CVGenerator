@@ -3,10 +3,10 @@ import { PropTypes as PT } from 'prop-types';
 import Select from 'react-select';
 import { Label } from 'Common';
 
-import { StyledSelect, reactSelectCustomStyle } from './styled';
+import { StyledSelect, selectMenuStyles } from './styled';
 
 class SelectComponent extends React.Component {
-  state = { selected: null };
+  state = { selected: false };
 
   handleOnChange = selected => {
     this.setState({ selected });
@@ -20,6 +20,7 @@ class SelectComponent extends React.Component {
       <StyledSelect>
         <Label text={text} isRequired={isRequired} />
         <Select
+          styles={selectMenuStyles}
           isDisabled={isDisabled}
           name={name}
           isSearchable={isSearchable}
@@ -27,6 +28,7 @@ class SelectComponent extends React.Component {
           onChange={this.handleOnChange}
           value={selected}
         />
+        {/* placeholder until component is hooked up to API */}
         <div className="selectedDiv">Selected option: {selected && selected.label}</div>
       </StyledSelect>
     );

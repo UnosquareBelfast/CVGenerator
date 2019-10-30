@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import context from 'jest-context';
 import Select from 'react-select';
-import sinon from 'sinon';
 import 'SetupTests';
 
 import { SelectComponent, Label } from 'Common';

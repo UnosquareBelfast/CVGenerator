@@ -4,7 +4,7 @@ import { StyledLabel } from './styled';
 
 const Label = ({ text, isRequired }) => (
   <StyledLabel>
-    {text} {isRequired && <div>*</div>}
+    {text} {isRequired && <span>*</span>}
   </StyledLabel>
 );
 

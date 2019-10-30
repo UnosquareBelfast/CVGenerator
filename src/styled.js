@@ -6,6 +6,9 @@ export const theme = {
     blue: '#67b7db',
     yellow: '#65db67',
     errorRed: '#ff0000',
+    focusedGrey: '#ddd',
+    fontBlack: '#000',
+    backgroundWhite: '#fff',
   },
   fonts: {
     main: 'Open Sans',
