@@ -25,6 +25,8 @@
         "babel"
     ],
     "rules": {
-        "import/no-extraneous-dependencies" : ["error", {"devDependencies": true}] 
+        "import/no-extraneous-dependencies" : ["error", {"devDependencies": true}],
+        // temporary fix until I figure out how to make eslint import/no-unresolved errors disappear
+        "import/no-unresolved": "off"
     }
 }

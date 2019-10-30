@@ -4,11 +4,12 @@ module.exports = {
     '^.+\\.(js|jsx)?$': 'babel-jest',
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
     '^Components(.*)$': '<rootDir>/src/components$1',
+    '^Common(.*)$': '<rootDir>/src/components/common$1',
     '^Pages(.*)$': '<rootDir>/src/pages$1',
-    '^Store(.*)$': '<rootDir>/src/store$1',
+    '^Utilities(.*)$': '<rootDir>/src/utilities$1',
+    '^SetupTests(.*)$': '<rootDir>/src/setupTests',
   },
-  testMatch: ['<rootDir>/(src/**/*.test.(js|jsx)|**/__tests__/*.(js|jsx|ts|tsx))'],
+  testMatch: ['<rootDir>/src/__tests__/**/*.js?(x)'],
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 };

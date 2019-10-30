@@ -1,7 +1,18 @@
-import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import Selector from './pages/Selector';
+import { hot } from 'react-hot-loader/root';
+import { ThemeProvider } from 'styled-components';
 
-const App = () => <Selector />;
+import Selector from 'Pages';
+
+import { GlobalStyle, theme } from './styled';
+
+const App = () => (
+  <div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Selector />
+    </ThemeProvider>
+  </div>
+);
 
 export default hot(App);
