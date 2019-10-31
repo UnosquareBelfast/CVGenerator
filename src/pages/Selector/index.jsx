@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectComponent } from 'Common';
+import { Select } from 'Common';
 import mockDataForSelect from 'Utilities';
 import container from './container';
 
@@ -7,7 +7,7 @@ import StyledPage from './styled';
 
 const Selector = () => (
   <StyledPage>
-    <SelectComponent
+    <Select
       text="Select Label"
       isRequired
       name="selectComponent"

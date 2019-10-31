@@ -28,6 +28,10 @@
         "import/no-extraneous-dependencies" : ["error", {"devDependencies": true}],
         // temporary fix until I figure out how to make eslint import/no-unresolved errors disappear
         "import/no-unresolved": "off",
-        "react/state-in-constructor": [2, "never"]
+        "react/state-in-constructor": [2, "never"],
+        "react/static-property-placement": "off",
+        "react/display-name": "off",
+        "react/jsx-filename-extension": "off"
+
     }
 }

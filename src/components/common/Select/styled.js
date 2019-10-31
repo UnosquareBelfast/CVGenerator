@@ -17,7 +17,7 @@ export const StyledSelect = styled.div`
   }
 `;
 
-export const selectMenuStyles = {
+export const SelectMenuStyles = {
   option: (provided, state) => ({
     ...provided,
     color: theme.colors.fontBlack,
