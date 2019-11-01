@@ -9,6 +9,7 @@ export const theme = {
     focusedGrey: '#ddd',
     fontBlack: '#000',
     backgroundWhite: '#fff',
+    backgroundGrey: '#eee',
   },
   fonts: {
     main: 'Open Sans',
@@ -29,24 +30,48 @@ export const theme = {
     },
   },
   mediaQueries: {
-    sm: '600px',
-    md: '768px',
-    lg: '992px',
-    xl: '1220px',
+    mobileXS: '320px',
+    mobileS: '360px',
+    mobileM: '375px',
+    mobileL: '414px',
+    tabletS: '600px',
+    tabletM: '768px',
+    desktopS: '1280px',
+    desktopM: '1440px',
+    desktopL: '1920px',
   },
+};
+
+export const device = {
+  mobileXS: `(min-width: ${theme.mediaQueries.mobileXS})`,
+  mobileS: `(min-width: ${theme.mediaQueries.mobileS})`,
+  mobileM: `(min-width: ${theme.mediaQueries.mobileM})`,
+  mobileL: `(min-width: ${theme.mediaQueries.mobileL})`,
+  tabletS: `(min-width: ${theme.mediaQueries.tabletS})`,
+  tabletM: `(min-width: ${theme.mediaQueries.tabletM})`,
+  desktopS: `(min-width: ${theme.mediaQueries.desktopS})`,
+  desktopM: `(min-width: ${theme.mediaQueries.desktopM})`,
+  desktopL: `(min-width: ${theme.mediaQueries.desktopL})`,
 };
 
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Varela Round", sans-serif;
     font-size: 19px;
-    line-height: 20px;
+    line-height: 25px;
     margin: 0;
   }
+
   h1 {
-    font-size: 40px;
+    font-size: 35px;
     letter-spacing: 4px;
+    margin-top: 50px;
+
+    @media ${device.mobileM} {
+      font-size: 40px;
+    }
   }
+
   h2 {
     font-size: 30px;
   }

@@ -7,14 +7,33 @@ import StyledPage from './styled';
 
 const Selector = () => (
   <StyledPage>
-    <Select
-      text="Select Label"
-      isRequired
-      name="selectComponent"
-      isSearchable
-      isDisabled={false}
-      options={mockDataForSelect.employees}
-    />
+    <h1>CV Generator</h1>
+    <div className="selectComponents">
+      <Select
+        text="Employee"
+        isRequired
+        name="selectComponentEmployee"
+        isSearchable
+        isDisabled={false}
+        options={mockDataForSelect.employees}
+      />
+      <Select
+        text="Client"
+        isRequired
+        name="selectComponentClient"
+        isSearchable
+        isDisabled={false}
+        options={mockDataForSelect.clients}
+      />
+      <Select
+        text="Template"
+        isRequired
+        name="selectComponentTemplate"
+        isSearchable
+        isDisabled={false}
+        options={mockDataForSelect.templates}
+      />
+    </div>
   </StyledPage>
 );
 
