@@ -26,8 +26,6 @@ const SelectComponent = ({
       onChange={handleOnChange}
       value={selected}
     />
-    {/* placeholder until component is hooked up to API */}
-    <div className="selectedDiv">Selected option: {selected && selected.label}</div>
   </StyledSelect>
 );
 
