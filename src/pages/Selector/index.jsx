@@ -1,13 +1,21 @@
 import React from 'react';
-import Label from 'Common';
+import { Select } from 'Common';
+import mockDataForSelect from 'Utilities';
 import container from './container';
 
-const Selector = () => {
-  return (
-    <div>
-      <Label text="Hello World" isRequired />
-    </div>
-  );
-};
+import StyledPage from './styled';
+
+const Selector = () => (
+  <StyledPage>
+    <Select
+      text="Select Label"
+      isRequired
+      name="selectComponent"
+      isSearchable
+      isDisabled={false}
+      options={mockDataForSelect.employees}
+    />
+  </StyledPage>
+);
 
 export default container(Selector);
