@@ -13,5 +13,5 @@ export const transformTemplates = templates => {
     return { id: value.id, label: value.templateName };
   });
 
-  return alphabeticalSort(transformedTemplates, template => template.templateName);
+  return alphabeticalSort(transformedTemplates, template => template.label);
 };
