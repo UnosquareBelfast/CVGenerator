@@ -1,12 +1,11 @@
-import { orderBy, forEach } from 'lodash';
+import { alphabeticalSort } from 'Utilities';
 
 export const transformEmployees = employees => {
-  const employeeCollection = [];
-  forEach(employees, value => {
-    employeeCollection.push({ id: value.id, label: `${value.lastName}, ${value.firstName}` });
+  const transformedEmployees = employees.map(value => {
+    return { id: value.id, label: `${value.lastName}, ${value.firstName}` };
   });
 
-  return orderBy(employeeCollection, ['label', 'desc']);
+  return alphabeticalSort(transformedEmployees, employee => employee.label);
 };
 
 export default transformEmployees;

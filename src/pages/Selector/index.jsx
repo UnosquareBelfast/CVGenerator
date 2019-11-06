@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
 import { Select } from 'Common';
-import mockDataForSelect from 'Utilities';
+import { mockDataForSelect } from 'Utilities';
 import container from './container';
 
 import StyledPage from './styled';
@@ -38,8 +38,13 @@ const Selector = ({ employees }) => (
   </StyledPage>
 );
 
-export default container(Selector);
-
 Selector.propTypes = {
-  employees: PT.arrayOf(PT.object).isRequired,
+  employees: PT.arrayOf(
+    PT.shape({
+      id: PT.number,
+      label: PT.string,
+    }),
+  ).isRequired,
 };
+
+export default container(Selector);

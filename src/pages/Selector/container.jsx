@@ -1,4 +1,5 @@
 import React from 'react';
+import fetchUsers from 'Services';
 import { transformEmployees as transform } from './transform-employees';
 
 const SelectorContainer = Wrapped =>
@@ -6,14 +7,8 @@ const SelectorContainer = Wrapped =>
     state = { employees: [] };
 
     componentDidMount() {
-      this.fetchEmployees();
+      fetchUsers().then(employees => this.setState({ employees }));
     }
-
-    fetchEmployees = () => {
-      fetch('http://localhost:8081/api/users').then(resp => {
-        resp.json().then(json => this.setState({ employees: json }));
-      });
-    };
 
     render() {
       const { employees } = this.state;
