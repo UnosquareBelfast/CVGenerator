@@ -1,3 +1,4 @@
-import { fetchUsers } from './userService';
+import { fetchUsers } from './user-service';
+import { fetchTemplates } from './template-service';
 
-export default fetchUsers;
+export { fetchUsers, fetchTemplates };

@@ -8,4 +8,10 @@ export const transformEmployees = employees => {
   return alphabeticalSort(transformedEmployees, employee => employee.label);
 };
 
-export default transformEmployees;
+export const transformTemplates = templates => {
+  const transformedTemplates = templates.map(value => {
+    return { id: value.id, label: value.templateName };
+  });
+
+  return alphabeticalSort(transformedTemplates, template => template.templateName);
+};
