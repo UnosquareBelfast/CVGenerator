@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from 'Common';
+import { Select, Button } from 'Common';
 import mockDataForSelect from 'Utilities';
 import container from './container';
 
@@ -33,6 +33,7 @@ const Selector = () => (
         isDisabled={false}
         options={mockDataForSelect.templates}
       />
+      <Button value="TestButton" disabled={false} type="submit" />
     </div>
   </StyledPage>
 );
