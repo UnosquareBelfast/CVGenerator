@@ -8,8 +8,10 @@ const SelectorContainer = Wrapped =>
     state = { employees: [], templates: [] };
 
     componentDidMount() {
+      /* eslint-disable no-shadow */
       fetchUsers().then(employees => this.setState({ employees }));
       fetchTemplates().then(templates => this.setState({ templates }));
+      /* eslint-enable no-shadow */
     }
 
     render() {
@@ -18,6 +20,7 @@ const SelectorContainer = Wrapped =>
         <Wrapped
           employees={transformEmployees(employees)}
           templates={transformTemplates(templates)}
+          // handleOnClick={this.handleOnClick}
         />
       );
     }

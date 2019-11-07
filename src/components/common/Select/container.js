@@ -36,6 +36,7 @@ const SelectContainer = Wrapped =>
 
     handleSelected = () => {
       const { selected } = this.state;
+<<<<<<< HEAD
       const { name, selectedEmployee, selectedTemplate } = this.props;
 
       if (name === selectFields.EMPLOYEE) {
@@ -44,6 +45,16 @@ const SelectContainer = Wrapped =>
 
       if (name === selectFields.TEMPLATE) {
         selectedTemplate(selected);
+=======
+      const { name } = this.props;
+
+      if (name === selectFields.employee) {
+        this.props.selectEmployee(selected);
+      }
+
+      if (name === selectFields.template) {
+        this.props.selectTemplate(selected);
+>>>>>>> Get selected options from selects
       }
     };
 
@@ -65,12 +76,21 @@ const SelectContainer = Wrapped =>
     }
   };
 
+<<<<<<< HEAD
 const mapDispatchToProps = dispatch => {
   return {
     selectedEmployee: selected => dispatch(selectEmployee(selected)),
     selectedTemplate: selected => dispatch(selectTemplate(selected)),
   };
 };
+=======
+function mapDispatchToProps(dispatch) {
+  return {
+    selectEmployee: selected => dispatch(selectEmployee(selected)),
+    selectTemplate: selected => dispatch(selectTemplate(selected)),
+  };
+}
+>>>>>>> Get selected options from selects
 
 export default compose(
   connect(
@@ -79,3 +99,7 @@ export default compose(
   ),
   SelectContainer,
 );
+<<<<<<< HEAD
+=======
+/* eslint-enable react/destructuring-assignment */
+>>>>>>> Get selected options from selects
