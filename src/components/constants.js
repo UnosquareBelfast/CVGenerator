@@ -1,6 +1,9 @@
-const buttonTypes = {
+export const buttonTypes = {
   SUBMIT: 'submit',
   BUTTON: 'button',
 };
 
-export default buttonTypes;
+export const selectFields = {
+  employee: 'selectComponentEmployee',
+  template: 'selectComponentTemplate',
+};

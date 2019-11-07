@@ -21,6 +21,7 @@ module.exports = {
       Themes: path.resolve(__dirname, 'src/styled'),
       Services: path.resolve(__dirname, 'src/services'),
       Constants: path.resolve(__dirname, 'src/components/constants'),
+      Actions: path.resolve(__dirname, 'src/store/actions'),
     },
   },
   module: {
