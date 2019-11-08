@@ -19,6 +19,7 @@ module.exports = {
       Common: path.resolve(__dirname, 'src/components/common/'),
       Utilities: path.resolve(__dirname, 'src/utilities/'),
       Themes: path.resolve(__dirname, 'src/styled'),
+      Services: path.resolve(__dirname, 'src/services'),
     },
   },
   module: {
