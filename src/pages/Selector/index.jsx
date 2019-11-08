@@ -6,7 +6,7 @@ import container from './container';
 
 import StyledPage from './styled';
 
-const Selector = ({ employees }) => (
+const Selector = ({ employees, templates }) => (
   <StyledPage>
     <h1>CV Generator</h1>
     <div className="selectComponents">
@@ -32,7 +32,7 @@ const Selector = ({ employees }) => (
         name="selectComponentTemplate"
         isSearchable
         isDisabled={false}
-        options={mockDataForSelect.templates}
+        options={templates}
       />
     </div>
   </StyledPage>
@@ -40,6 +40,12 @@ const Selector = ({ employees }) => (
 
 Selector.propTypes = {
   employees: PT.arrayOf(
+    PT.shape({
+      id: PT.number,
+      label: PT.string,
+    }),
+  ).isRequired,
+  templates: PT.arrayOf(
     PT.shape({
       id: PT.number,
       label: PT.string,

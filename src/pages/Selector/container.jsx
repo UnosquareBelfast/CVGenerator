@@ -1,19 +1,25 @@
 import React from 'react';
-import fetchUsers from 'Services';
-import { transformEmployees as transform } from './transform-employees';
+import { fetchUsers, fetchTemplates } from 'Services';
+import { transformEmployees, transformTemplates } from './transform';
 
 const SelectorContainer = Wrapped =>
   class extends React.Component {
-    state = { employees: [] };
+    state = { employees: [], templates: [] };
 
     componentDidMount() {
       fetchUsers().then(employees => this.setState({ employees }));
+      fetchTemplates().then(templates => this.setState({ templates }));
     }
 
     render() {
-      const { employees } = this.state;
+      const { employees, templates } = this.state;
 
-      return <Wrapped employees={transform(employees)} />;
+      return (
+        <Wrapped
+          employees={transformEmployees(employees)}
+          templates={transformTemplates(templates)}
+        />
+      );
     }
   };
 
