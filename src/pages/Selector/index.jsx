@@ -1,6 +1,8 @@
 import React from 'react';
-import { Select, Button } from 'Common';
+import { Select } from 'Common';
+
 import mockDataForSelect from 'Utilities';
+import GenerateButton from '../../components/GenerateCVButton';
 import container from './container';
 
 import StyledPage from './styled';
@@ -33,7 +35,7 @@ const Selector = () => (
         isDisabled={false}
         options={mockDataForSelect.templates}
       />
-      <Button value="TestButton" disabled={false} type="submit" />
+      <GenerateButton />
     </div>
   </StyledPage>
 );
