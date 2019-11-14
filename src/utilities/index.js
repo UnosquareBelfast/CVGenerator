@@ -1,3 +1,4 @@
 import mockDataForSelect from './mock-data';
+import alphabeticalSort from './alphabetical-sort';
 
-export default mockDataForSelect;
+export { alphabeticalSort, mockDataForSelect };

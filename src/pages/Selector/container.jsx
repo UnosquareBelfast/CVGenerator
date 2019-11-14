@@ -1,13 +1,26 @@
 import React from 'react';
+import { fetchUsers, fetchTemplates } from 'Services';
+import { transformEmployees, transformTemplates } from './transform';
 
-// temporarily disabling this rule until the function is fleshed out
-/* eslint-disable react/prefer-stateless-function */
 const SelectorContainer = Wrapped =>
-  class Selector extends React.Component {
+  class extends React.Component {
+    state = { employees: [], templates: [] };
+
+    componentDidMount() {
+      fetchUsers().then(employees => this.setState({ employees }));
+      fetchTemplates().then(templates => this.setState({ templates }));
+    }
+
     render() {
-      return <Wrapped />;
+      const { employees, templates } = this.state;
+
+      return (
+        <Wrapped
+          employees={transformEmployees(employees)}
+          templates={transformTemplates(templates)}
+        />
+      );
     }
   };
 
 export default SelectorContainer;
-/* eslint-enable react/prefer-stateless-function */

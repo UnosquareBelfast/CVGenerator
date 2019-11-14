@@ -1,11 +1,12 @@
 import React from 'react';
-import { Select, Button } from 'Common';
-import mockDataForSelect from 'Utilities';
+import { PropTypes as PT } from 'prop-types';
+import { Select } from 'Common';
+import { mockDataForSelect } from 'Utilities';
 import container from './container';
 
 import StyledPage from './styled';
 
-const Selector = () => (
+const Selector = ({ employees, templates }) => (
   <StyledPage>
     <h1>CV Generator</h1>
     <div className="selectComponents">
@@ -15,7 +16,7 @@ const Selector = () => (
         name="selectComponentEmployee"
         isSearchable
         isDisabled={false}
-        options={mockDataForSelect.employees}
+        options={employees}
       />
       <Select
         text="Client"
@@ -31,11 +32,26 @@ const Selector = () => (
         name="selectComponentTemplate"
         isSearchable
         isDisabled={false}
-        options={mockDataForSelect.templates}
+        options={templates}
       />
       <Button value="TestButton" disabled={false} type="submit" />
     </div>
   </StyledPage>
 );
+
+Selector.propTypes = {
+  employees: PT.arrayOf(
+    PT.shape({
+      id: PT.number,
+      label: PT.string,
+    }),
+  ).isRequired,
+  templates: PT.arrayOf(
+    PT.shape({
+      id: PT.number,
+      label: PT.string,
+    }),
+  ).isRequired,
+};
 
 export default container(Selector);
