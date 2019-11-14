@@ -10,6 +10,7 @@ export const theme = {
     fontBlack: '#000',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
+    buttonBlue: '#24A0ED',
   },
   fonts: {
     main: 'Open Sans',

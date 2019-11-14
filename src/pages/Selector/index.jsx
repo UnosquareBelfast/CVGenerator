@@ -34,6 +34,7 @@ const Selector = ({ employees, templates }) => (
         isDisabled={false}
         options={templates}
       />
+      <Button value="TestButton" disabled={false} type="submit" />
     </div>
   </StyledPage>
 );
