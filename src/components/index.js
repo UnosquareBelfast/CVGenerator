@@ -1,1 +1,3 @@
-export { default as GenerateCVButton } from './GenerateCVButton';
+import GenerateButton from './GenerateCVButton';
+
+export default GenerateButton;

@@ -9,15 +9,15 @@ const GenerateButton = ({ disabled, handleClick }) => {
     <Button
       value="Generate CV"
       disabled={disabled}
-      type={buttonTypes.submit}
+      type={buttonTypes.SUBMIT}
       handleClick={handleClick}
     />
   );
 };
 
-export default container(GenerateButton);
-
 GenerateButton.propTypes = {
   disabled: PT.bool.isRequired,
   handleClick: PT.func.isRequired,
 };
+
+export default container(GenerateButton);

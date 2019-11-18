@@ -1,6 +1,6 @@
 const buttonTypes = {
-  submit: 'submit',
-  button: 'button',
+  SUBMIT: 'submit',
+  BUTTON: 'button',
 };
 
 export default buttonTypes;
