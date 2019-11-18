@@ -44,15 +44,6 @@ const SelectContainer = Wrapped =>
 
       if (name === selectFields.TEMPLATE) {
         selectedTemplate(selected);
-
-      const { name, selectedEmployee, selectedTemplate } = this.props;
-
-      if (name === selectFields.EMPLOYEE) {
-        selectedEmployee(selected);
-      }
-
-      if (name === selectFields.TEMPLATE) {
-        selectedTemplate(selected);
       }
     };
 
@@ -72,8 +63,7 @@ const SelectContainer = Wrapped =>
         />
       );
     }
-  }
-}
+  };
 
 const mapDispatchToProps = dispatch => {
   return {

@@ -8,6 +8,7 @@ export const theme = {
     errorRed: '#ff0000',
     focusedGrey: '#ddd',
     fontBlack: '#000',
+    fontGrey: '#888',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
     buttonBlue: '#24A0ED',

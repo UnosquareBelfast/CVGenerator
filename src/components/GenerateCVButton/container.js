@@ -12,6 +12,8 @@ const GenerateButtonContainer = Wrapped =>
       selectedTemplate: PT.shape({ id: PT.number, label: PT.string }).isRequired,
     };
 
+    state = { isClicked: false };
+
     isDisabled = () => {
       const { selectedEmployee, selectedTemplate } = this.props;
       return (
@@ -25,6 +27,7 @@ const GenerateButtonContainer = Wrapped =>
       // info that will eventually be sent to the backend in the POST
       console.log('selected employee: ', selectedEmployee);
       console.log('selectedTemplate: ', selectedTemplate);
+      this.setState({ isClicked: true });
     };
 
     render() {
