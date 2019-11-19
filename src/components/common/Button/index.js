@@ -1,6 +1,5 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
-import container from './container';
 import { StyledButton } from './styled';
 
 const Button = ({ value, disabled, handleClick, type }) => {
@@ -21,4 +20,4 @@ Button.propTypes = {
   type: PT.oneOf(['submit', 'button']).isRequired,
 };
 
-export default container(Button);
+export default Button;

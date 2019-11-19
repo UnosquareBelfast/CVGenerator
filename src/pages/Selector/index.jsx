@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes as PT } from 'prop-types';
 import { Select } from 'Common';
 import { mockDataForSelect } from 'Utilities';
+import GenerateCVButton from 'Components';
 import container from './container';
 
 import StyledPage from './styled';
@@ -34,7 +35,7 @@ const Selector = ({ employees, templates }) => (
         isDisabled={false}
         options={templates}
       />
-      <Button value="TestButton" disabled={false} type="submit" />
+      <GenerateCVButton />
     </div>
   </StyledPage>
 );

@@ -9,6 +9,10 @@ export const StyledButton = styled.button`
   font-size: 18px;
   margin: 38px;
   padding: 10px 35px;
+
+  :disabled {
+    opacity: 0.5;
+  }
 `;
 
 export default StyledButton;
