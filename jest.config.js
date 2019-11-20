@@ -10,6 +10,7 @@ module.exports = {
     '^Utilities(.*)$': '<rootDir>/src/utilities$1',
     '^SetupTests(.*)$': '<rootDir>/src/setupTests',
     '^Themes(.*)$': '<rootDir>/src/styled',
+    '^Actions(.*)$': '<rootDir>/src/store/actions',
   },
   testMatch: ['<rootDir>/src/__tests__/**/*.js?(x)'],
   transformIgnorePatterns: ['<rootDir>/node_modules/'],

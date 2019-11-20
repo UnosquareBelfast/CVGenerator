@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { fetchUsers, fetchTemplates } from 'Services';
 import { transformEmployees, transformTemplates } from './transform';
 
@@ -13,7 +14,6 @@ const SelectorContainer = Wrapped =>
 
     render() {
       const { employees, templates } = this.state;
-
       return (
         <Wrapped
           employees={transformEmployees(employees)}

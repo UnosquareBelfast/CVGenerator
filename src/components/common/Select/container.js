@@ -1,7 +1,12 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 
-export default Wrapped =>
+import { selectFields } from 'Constants';
+import { selectEmployee, selectTemplate } from 'Actions';
+
+const SelectContainer = Wrapped =>
   class extends React.Component {
     static propTypes = {
       text: PT.string.isRequired,
@@ -10,6 +15,8 @@ export default Wrapped =>
       isSearchable: PT.bool.isRequired,
       isDisabled: PT.bool.isRequired,
       options: PT.arrayOf(PT.object).isRequired,
+      selectedEmployee: PT.func.isRequired,
+      selectedTemplate: PT.func.isRequired,
     };
 
     static defaultProps = {
@@ -19,7 +26,25 @@ export default Wrapped =>
     state = { selected: {} };
 
     handleOnChange = e => {
-      this.setState({ selected: e });
+      this.setState(
+        {
+          selected: e,
+        },
+        () => this.handleSelected(),
+      );
+    };
+
+    handleSelected = () => {
+      const { selected } = this.state;
+      const { name, selectedEmployee, selectedTemplate } = this.props;
+
+      if (name === selectFields.EMPLOYEE) {
+        selectedEmployee(selected);
+      }
+
+      if (name === selectFields.TEMPLATE) {
+        selectedTemplate(selected);
+      }
     };
 
     render() {
@@ -39,3 +64,18 @@ export default Wrapped =>
       );
     }
   };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    selectedEmployee: selected => dispatch(selectEmployee(selected)),
+    selectedTemplate: selected => dispatch(selectTemplate(selected)),
+  };
+};
+
+export default compose(
+  connect(
+    null,
+    mapDispatchToProps,
+  ),
+  SelectContainer,
+);
