@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { selectFields } from 'Constants';
 import { selectEmployee, selectTemplate } from 'Actions';
 
-/* eslint-disable react/destructuring-assignment */
 const SelectContainer = Wrapped =>
   class extends React.Component {
     static propTypes = {
@@ -16,8 +15,8 @@ const SelectContainer = Wrapped =>
       isSearchable: PT.bool.isRequired,
       isDisabled: PT.bool.isRequired,
       options: PT.arrayOf(PT.object).isRequired,
-      selectEmployee: PT.func.isRequired,
-      selectTemplate: PT.func.isRequired,
+      selectedEmployee: PT.func.isRequired,
+      selectedTemplate: PT.func.isRequired,
     };
 
     static defaultProps = {
@@ -37,14 +36,14 @@ const SelectContainer = Wrapped =>
 
     handleSelected = () => {
       const { selected } = this.state;
-      const { name } = this.props;
+      const { name, selectedEmployee, selectedTemplate } = this.props;
 
-      if (name === selectFields.employee) {
-        this.props.selectEmployee(selected);
+      if (name === selectFields.EMPLOYEE) {
+        selectedEmployee(selected);
       }
 
-      if (name === selectFields.template) {
-        this.props.selectTemplate(selected);
+      if (name === selectFields.TEMPLATE) {
+        selectedTemplate(selected);
       }
     };
 
@@ -66,12 +65,12 @@ const SelectContainer = Wrapped =>
     }
   };
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return {
-    selectEmployee: selected => dispatch(selectEmployee(selected)),
-    selectTemplate: selected => dispatch(selectTemplate(selected)),
+    selectedEmployee: selected => dispatch(selectEmployee(selected)),
+    selectedTemplate: selected => dispatch(selectTemplate(selected)),
   };
-}
+};
 
 export default compose(
   connect(
@@ -80,4 +79,3 @@ export default compose(
   ),
   SelectContainer,
 );
-/* eslint-enable react/destructuring-assignment */

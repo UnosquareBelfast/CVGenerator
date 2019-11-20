@@ -4,6 +4,6 @@ export const buttonTypes = {
 };
 
 export const selectFields = {
-  employee: 'selectComponentEmployee',
-  template: 'selectComponentTemplate',
+  EMPLOYEE: 'selectComponentEmployee',
+  TEMPLATE: 'selectComponentTemplate',
 };
