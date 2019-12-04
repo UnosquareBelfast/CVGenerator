@@ -1,8 +1,8 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
-import { Select } from 'Common';
-import { mockDataForSelect } from 'Utilities';
-import GenerateCVButton from 'Components';
+import { Select, Modal } from 'Common';
+import { mockDataForSelect, mockDataForModal } from 'Utilities';
+import { GenerateCVButton, CancelModalButton, DownloadModalButton } from 'Components';
 import container from './container';
 
 import StyledPage from './styled';
@@ -37,6 +37,10 @@ const Selector = ({ employees, templates }) => (
       />
       <GenerateCVButton />
     </div>
+    <Modal isOpen title="Preview Document" bodyText={mockDataForModal.bodyText}>
+      <CancelModalButton />
+      <DownloadModalButton />
+    </Modal>
   </StyledPage>
 );
 

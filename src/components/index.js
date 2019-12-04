@@ -1,3 +1,3 @@
-import GenerateButton from './GenerateCVButton';
-
-export default GenerateButton;
+export { default as GenerateCVButton } from './GenerateCVButton';
+export { default as CancelModalButton } from './ModalButtons/CancelButton';
+export { default as DownloadModalButton } from './ModalButtons/DownloadButton';

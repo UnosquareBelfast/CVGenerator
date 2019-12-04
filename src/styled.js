@@ -11,6 +11,7 @@ export const theme = {
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
     buttonBlue: '#24A0ED',
+    fontGrey: '#666',
   },
   fonts: {
     main: 'Open Sans',
