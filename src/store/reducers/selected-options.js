@@ -11,6 +11,16 @@ const selectedOptionsReducer = (state = initialState.selectedOptions, action) =>
   }
 };
 
+const selectedItemsReducer = (state = initialState.selectedItems, action) => {
+  switch (action.type) {
+    case 'GENERATE_CV':
+      return { ...state, selectedItems: action.selectedItems };
+    default:
+      return state;
+  }
+};
+
 export const getEmployee = store => store.employee;
 export const getTemplate = store => store.template;
-export default selectedOptionsReducer;
+export const getEmployeeCV = store => store.selectedItems;
+export { selectedOptionsReducer, selectedItemsReducer };

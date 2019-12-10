@@ -3,4 +3,5 @@ export default {
     employee: {},
     template: {},
   },
+  selectedItems: [],
 };

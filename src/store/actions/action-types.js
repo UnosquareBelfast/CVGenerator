@@ -1,2 +1,3 @@
 export const SELECT_EMPLOYEE = 'SELECT_EMPLOYEE';
 export const SELECT_TEMPLATE = 'SELECT_TEMPLATE';
+export const GENERATE_CV = 'GENERATE_CV';

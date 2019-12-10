@@ -32,6 +32,7 @@
         "react/static-property-placement": "off",
         "react/display-name": "off",
         "react/jsx-filename-extension": "off",
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "react/no-did-update-set-state": "off"
     }
 }
