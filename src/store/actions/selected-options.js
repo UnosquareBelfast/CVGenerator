@@ -13,3 +13,13 @@ export const selectTemplate = template => {
     template,
   };
 };
+
+export const generateEmployeeCV = (employee, template) => {
+  const selectedItems = [];
+  selectedItems.push(employee, template);
+
+  return {
+    type: actionTypes.GENERATE_CV,
+    selectedItems,
+  };
+};

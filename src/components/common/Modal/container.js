@@ -8,7 +8,7 @@ const ModalContainer = Wrapped =>
       isOpen: PT.bool.isRequired,
       title: PT.string.isRequired,
       bodyText: PT.string.isRequired,
-      children: PT.objectOf(PT.symbol).isRequired,
+      children: PT.oneOfType([PT.array, PT.object]).isRequired,
       className: PT.string.isRequired,
     };
 
