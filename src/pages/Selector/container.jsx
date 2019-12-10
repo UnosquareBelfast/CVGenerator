@@ -50,4 +50,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default compose(connect(mapStateToProps), SelectorContainer);
+export default compose(
+  connect(mapStateToProps),
+  SelectorContainer,
+);
