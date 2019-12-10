@@ -7,7 +7,7 @@ import container from './container';
 
 import StyledPage from './styled';
 
-const Selector = ({ employees, templates }) => (
+const Selector = ({ employees, templates, employeeCV, handleCancelClick, modalIsOpen }) => (
   <StyledPage>
     <h1>CV Generator</h1>
     <div className="selectComponents">
@@ -57,6 +57,14 @@ Selector.propTypes = {
       label: PT.string,
     }),
   ).isRequired,
+  employeeCV: PT.arrayOf(
+    PT.shape({
+      id: PT.number,
+      label: PT.string,
+    }),
+  ).isRequired,
+  handleCancelClick: PT.func.isRequired,
+  modalIsOpen: PT.bool.isRequired,
 };
 
 export default container(Selector);
