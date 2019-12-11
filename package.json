@@ -9,7 +9,7 @@
     "format": "prettier --write '**/*.{html,js,jsx}'",
     "lint": "eslint '**/*.{js,jsx}'",
     "eslint-check": "eslint --print-config '**/*.{html,js,jsx}' | eslint-config-prettier-check",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "coverage": "jest --coverage",
     "pretty-quick": "pretty-quick"
   },

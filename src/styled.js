@@ -7,11 +7,16 @@ export const theme = {
     yellow: '#65db67',
     errorRed: '#ff0000',
     focusedGrey: '#ddd',
+    unfocusedWhite: 'rgba(255, 255, 255, 0.75)',
     fontBlack: '#000',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
     buttonBlue: '#24A0ED',
     fontGrey: '#666',
+  },
+  borders: {
+    borderGrey: '2px solid grey',
+    borderModal: '1px solid #ccc',
   },
   fonts: {
     main: 'Open Sans',

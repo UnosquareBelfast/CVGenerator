@@ -38,8 +38,8 @@ const Selector = ({ employees, templates }) => (
       <GenerateCVButton />
     </div>
     <Modal isOpen title="Preview Document" bodyText={mockDataForModal.bodyText}>
-      <CancelModalButton />
-      <DownloadModalButton />
+      <CancelModalButton className="cancel-button" />
+      <DownloadModalButton className="download-button" />
     </Modal>
   </StyledPage>
 );

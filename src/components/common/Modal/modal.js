@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { PropTypes as PT } from 'prop-types';
 import container from './container';
 
-Modal.setAppElement('#root');
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 const ReactModalAdapter = ({ className, isOpen, title, bodyText, children }) => {
   const contentClassName = `${className}__content`;

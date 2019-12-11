@@ -9,21 +9,29 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: ${({ theme }) => theme.colors.unfocusedWhite};
   }
   &__content {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    border: 1px solid #ccc;
+    border: ${({ theme }) => theme.borders.borderModal};
     background: #fff;
     overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    borderradius: 4px;
     outline: none;
     padding: 20px;
+
+    @media ${device.mobileXS} {
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    @media ${device.tabletS} {
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      bottom: 40px;
+    }
   }
   .button-bar {
     align-items: center;
@@ -40,7 +48,7 @@ export const StyledModal = styled(ReactModalAdapter)`
     }
   }
   h1 {
-    border-bottom: 2px solid grey;
+    border-bottom: ${({ theme }) => theme.borders.borderGrey};
     padding-bottom: 10px;
   }
 `;

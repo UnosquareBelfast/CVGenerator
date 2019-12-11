@@ -13,16 +13,12 @@ const Button = ({ value, disabled, handleClick, type, className }) => {
   /* eslint-enable react/button-has-type */
 };
 
-Button.defaultProps = {
-  className: 'defaultClassName',
-};
-
 Button.propTypes = {
   value: PT.string.isRequired,
-  className: PT.string,
   disabled: PT.bool.isRequired,
   handleClick: PT.func.isRequired,
   type: PT.oneOf(['submit', 'button']).isRequired,
+  className: PT.string.isRequired,
 };
 
 export default Button;
