@@ -7,11 +7,18 @@ import container from './container';
 
 import StyledPage from './styled';
 
-const Selector = ({ employees, templates, employeeCV, handleCancelClick, modalIsOpen }) => (
+export const UnwrappedSelector = ({
+  employees,
+  templates,
+  employeeCV,
+  handleCancelClick,
+  modalIsOpen,
+}) => (
   <StyledPage>
     <h1>CV Generator</h1>
     <div className="selectComponents">
       <Select
+        data-select="select"
         text="Employee"
         isRequired
         name="selectComponentEmployee"
@@ -20,6 +27,7 @@ const Selector = ({ employees, templates, employeeCV, handleCancelClick, modalIs
         options={employees}
       />
       <Select
+        data-select="client"
         text="Client"
         isRequired
         name="selectComponentClient"
@@ -28,6 +36,7 @@ const Selector = ({ employees, templates, employeeCV, handleCancelClick, modalIs
         options={mockDataForSelect.clients}
       />
       <Select
+        data-select="template"
         text="Template"
         isRequired
         name="selectComponentTemplate"
@@ -35,16 +44,18 @@ const Selector = ({ employees, templates, employeeCV, handleCancelClick, modalIs
         isDisabled={false}
         options={templates}
       />
-      <GenerateCVButton />
+      <GenerateCVButton data-button="generate-cv" />
     </div>
-    <Modal isOpen title="Preview Document" bodyText={mockDataForModal.bodyText}>
-      <CancelModalButton className="cancel-button" />
-      <DownloadModalButton className="download-button" />
-    </Modal>
+    {employeeCV.length >= 1 && (
+      <Modal isOpen={modalIsOpen} title="Preview Document" bodyText={mockDataForModal.bodyText}>
+        <CancelModalButton className="cancel-button" handleClick={handleCancelClick} />
+        <DownloadModalButton className="download-button" />
+      </Modal>
+    )}
   </StyledPage>
 );
 
-Selector.propTypes = {
+UnwrappedSelector.propTypes = {
   employees: PT.arrayOf(
     PT.shape({
       id: PT.number,
@@ -67,4 +78,6 @@ Selector.propTypes = {
   modalIsOpen: PT.bool.isRequired,
 };
 
-export default container(Selector);
+const WrappedSelector = container(UnwrappedSelector);
+
+export default WrappedSelector;
