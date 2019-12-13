@@ -72,10 +72,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default compose(
-  connect(
-    null,
-    mapDispatchToProps,
-  ),
-  SelectContainer,
-);
+export default compose(connect(null, mapDispatchToProps), SelectContainer);

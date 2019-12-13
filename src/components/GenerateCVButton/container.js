@@ -39,7 +39,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default compose(
-  connect(mapStateToProps),
-  GenerateButtonContainer,
-);
+export default compose(connect(mapStateToProps), GenerateButtonContainer);
