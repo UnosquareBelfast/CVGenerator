@@ -5,7 +5,7 @@ import { StyledModal } from './styled';
 const Modal = ({ isOpen, title, bodyText, children }) => {
   return (
     <StyledModal isOpen={isOpen} title={title} bodyText={bodyText}>
-      <div className="button-bar">{children}</div>
+      {children}
     </StyledModal>
   );
 };

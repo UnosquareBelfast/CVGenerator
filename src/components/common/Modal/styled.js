@@ -19,6 +19,16 @@ export const StyledModal = styled(ReactModalAdapter)`
     outline: none;
     padding: 20px;
 
+    .cv-content {
+      border: ${({ theme }) => theme.borders.borderLightGrey};
+      height: 80%;
+
+      object {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
     @media ${device.mobileXS} {
       top: 20px;
       left: 20px;
@@ -33,6 +43,7 @@ export const StyledModal = styled(ReactModalAdapter)`
       bottom: 40px;
     }
   }
+
   .button-bar {
     align-items: center;
     display: flex;
