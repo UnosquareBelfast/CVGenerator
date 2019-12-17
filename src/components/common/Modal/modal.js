@@ -5,7 +5,7 @@ import container from './container';
 
 if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
-const ReactModalAdapter = ({ className, isOpen, title, bodyText, children }) => {
+const ReactModalAdapter = ({ className, isOpen, title, children }) => {
   const contentClassName = `${className}__content`;
   const overlayClassName = `${className}__overlay`;
 
@@ -17,7 +17,6 @@ const ReactModalAdapter = ({ className, isOpen, title, bodyText, children }) => 
       overlayClassName={overlayClassName}
     >
       <h1>{title}</h1>
-      {bodyText}
       {children}
     </Modal>
   );
@@ -26,7 +25,6 @@ const ReactModalAdapter = ({ className, isOpen, title, bodyText, children }) => 
 ReactModalAdapter.propTypes = {
   isOpen: PT.bool.isRequired,
   title: PT.string.isRequired,
-  bodyText: PT.string.isRequired,
   children: PT.oneOfType([PT.array, PT.object]).isRequired,
   className: PT.string.isRequired,
 };

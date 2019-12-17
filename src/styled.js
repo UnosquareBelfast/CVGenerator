@@ -16,6 +16,7 @@ export const theme = {
   },
   borders: {
     borderGrey: '2px solid grey',
+    borderLightGrey: '2px solid #C2C5CC',
     borderModal: '1px solid #ccc',
   },
   fonts: {
