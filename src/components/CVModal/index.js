@@ -8,12 +8,14 @@ export const CVModal = ({ employeeCV, handleCancelClick, modalIsOpen, cvData }) 
   if (employeeCV && employeeCV.length >= 1) {
     return (
       <Modal isOpen={modalIsOpen} title="Preview Document">
-        <div className="cv-content">
-          <object data={cvData} title="CV Data" />
-        </div>
-        <div className="button-bar">
-          <CancelModalButton className="cancel-button" handleClick={handleCancelClick} />
-          <DownloadModalButton className="download-button" />
+        <div className="modal-content">
+          <div className="cv-content">
+            <object data={cvData} title="CV Data" />
+          </div>
+          <div className="button-bar">
+            <CancelModalButton className="cancel-button" handleClick={handleCancelClick} />
+            <DownloadModalButton className="download-button" />
+          </div>
         </div>
       </Modal>
     );

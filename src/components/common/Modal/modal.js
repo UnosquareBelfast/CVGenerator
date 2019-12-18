@@ -10,15 +10,17 @@ const ReactModalAdapter = ({ className, isOpen, title, children }) => {
   const overlayClassName = `${className}__overlay`;
 
   return (
-    <Modal
-      isOpen={isOpen}
-      portalClassName={className}
-      className={contentClassName}
-      overlayClassName={overlayClassName}
-    >
-      <h1>{title}</h1>
-      {children}
-    </Modal>
+    <div className="modal-container">
+      <Modal
+        isOpen={isOpen}
+        portalClassName={className}
+        className={contentClassName}
+        overlayClassName={overlayClassName}
+      >
+        <h1>{title}</h1>
+        {children}
+      </Modal>
+    </div>
   );
 };
 

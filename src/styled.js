@@ -8,6 +8,7 @@ export const theme = {
     errorRed: '#ff0000',
     focusedGrey: '#ddd',
     unfocusedWhite: 'rgba(255, 255, 255, 0.75)',
+    overlayGrey: 'rgba(68, 68, 68, 0.75)',
     fontBlack: '#000',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
