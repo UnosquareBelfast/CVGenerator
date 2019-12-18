@@ -30,7 +30,7 @@ const CVModalContainer = Wrapped =>
 
     render() {
       const { employeeCV, modalIsOpen, cv } = this.state;
-
+      console.log('cv: ', cv);
       return (
         <Wrapped
           employeeCV={employeeCV}
@@ -48,7 +48,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default compose(
-  connect(mapStateToProps),
-  CVModalContainer,
-);
+export default compose(connect(mapStateToProps), CVModalContainer);

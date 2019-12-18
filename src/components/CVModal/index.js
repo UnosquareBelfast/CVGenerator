@@ -5,6 +5,7 @@ import { Modal } from 'Common';
 import container from './container';
 
 export const CVModal = ({ employeeCV, handleCancelClick, modalIsOpen, cvData }) => {
+  console.log('cvData: ', cvData);
   if (employeeCV && employeeCV.length >= 1) {
     return (
       <Modal isOpen={modalIsOpen} title="Preview Document">
@@ -14,7 +15,7 @@ export const CVModal = ({ employeeCV, handleCancelClick, modalIsOpen, cvData }) 
           </div>
           <div className="button-bar">
             <CancelModalButton className="cancel-button" handleClick={handleCancelClick} />
-            <DownloadModalButton className="download-button" />
+            <DownloadModalButton className="download-button" cvURI={cvData} />
           </div>
         </div>
       </Modal>
