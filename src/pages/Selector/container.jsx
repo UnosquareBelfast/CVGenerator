@@ -27,9 +27,7 @@ const SelectorContainer = Wrapped =>
       }
     }
 
-    handleCancelModal = () => {
-      return this.setState({ modalIsOpen: false });
-    };
+    handleCancelModal = () => this.setState({ modalIsOpen: false });
 
     render() {
       const { employees, templates, employeeCV, modalIsOpen } = this.state;
@@ -52,7 +50,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default compose(
-  connect(mapStateToProps),
-  SelectorContainer,
-);
+export default compose(connect(mapStateToProps), SelectorContainer);
