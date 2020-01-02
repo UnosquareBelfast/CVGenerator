@@ -1,7 +1,6 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
 
-/* eslint-disable react/prefer-stateless-function */
 const ModalContainer = Wrapped =>
   class extends React.Component {
     static propTypes = {
@@ -22,5 +21,5 @@ const ModalContainer = Wrapped =>
       );
     }
   };
-/* eslint-enable react/prefer-stateless-function */
+
 export default ModalContainer;
