@@ -3,7 +3,7 @@ import { PropTypes as PT } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchUsers, fetchTemplates } from 'Services';
-import { getEmployeeCV } from 'Reducers/selected-options';
+import { getSelectedValues } from 'Reducers/selected-options';
 
 import { transformEmployees, transformTemplates } from './transform';
 
@@ -13,7 +13,7 @@ const SelectorContainer = Wrapped =>
       employeeCV: PT.shape({ id: PT.number, label: PT.string }).isRequired,
     };
 
-    state = { employees: [], templates: [], employeeCV: [], modalIsOpen: false };
+    state = { employees: [], templates: [], employeeCV: [], isModalOpen: false };
 
     componentDidMount() {
       fetchUsers().then(employees => this.setState({ employees }));
@@ -22,17 +22,16 @@ const SelectorContainer = Wrapped =>
 
     componentDidUpdate(prevProps) {
       const { employeeCV } = this.props;
+
       if (prevProps.employeeCV !== employeeCV) {
-        this.setState({ employeeCV, modalIsOpen: true });
+        this.setState({ employeeCV, isModalOpen: true });
       }
     }
 
-    handleCancelModal = () => {
-      return this.setState({ modalIsOpen: false });
-    };
+    handleCancelModal = () => this.setState({ isModalOpen: false });
 
     render() {
-      const { employees, templates, employeeCV, modalIsOpen } = this.state;
+      const { employees, templates, employeeCV, isModalOpen } = this.state;
 
       return (
         <Wrapped
@@ -40,7 +39,7 @@ const SelectorContainer = Wrapped =>
           templates={transformTemplates(templates)}
           employeeCV={employeeCV}
           handleCancelClick={this.handleCancelModal}
-          modalIsOpen={modalIsOpen}
+          isModalOpen={isModalOpen}
         />
       );
     }
@@ -48,11 +47,8 @@ const SelectorContainer = Wrapped =>
 
 const mapStateToProps = state => {
   return {
-    employeeCV: getEmployeeCV(state.GENERATE_CV),
+    employeeCV: getSelectedValues(state.GENERATE_CV),
   };
 };
 
-export default compose(
-  connect(mapStateToProps),
-  SelectorContainer,
-);
+export default compose(connect(mapStateToProps), SelectorContainer);

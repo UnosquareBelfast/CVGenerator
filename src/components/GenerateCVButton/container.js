@@ -11,7 +11,7 @@ const GenerateButtonContainer = Wrapped =>
     static propTypes = {
       selectedEmployee: PT.shape({ id: PT.number, label: PT.string }).isRequired,
       selectedTemplate: PT.shape({ id: PT.number, label: PT.string }).isRequired,
-      employeeCV: PT.func.isRequired,
+      generateCV: PT.func.isRequired,
     };
 
     state = { renderModal: false };
@@ -25,10 +25,10 @@ const GenerateButtonContainer = Wrapped =>
     };
 
     handleOnClick = () => {
-      const { selectedEmployee, selectedTemplate, employeeCV } = this.props;
+      const { selectedEmployee, selectedTemplate, generateCV } = this.props;
 
       // info that will eventually be sent to the backend in the POST
-      employeeCV(selectedEmployee, selectedTemplate);
+      generateCV(selectedEmployee, selectedTemplate);
     };
 
     render() {
@@ -45,15 +45,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    employeeCV: (selectedEmployee, selectedTemplate) =>
+    generateCV: (selectedEmployee, selectedTemplate) =>
       dispatch(generateEmployeeCV(selectedEmployee, selectedTemplate)),
   };
 };
 
-export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  ),
-  GenerateButtonContainer,
-);
+export default compose(connect(mapStateToProps, mapDispatchToProps), GenerateButtonContainer);

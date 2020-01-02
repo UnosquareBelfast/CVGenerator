@@ -22,5 +22,5 @@ const selectedItemsReducer = (state = initialState.selectedItems, action) => {
 
 export const getEmployee = store => store.employee;
 export const getTemplate = store => store.template;
-export const getEmployeeCV = store => store.selectedItems;
+export const getSelectedValues = store => store.selectedItems;
 export { selectedOptionsReducer, selectedItemsReducer };

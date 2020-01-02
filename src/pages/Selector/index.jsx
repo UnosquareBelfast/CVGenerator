@@ -12,7 +12,7 @@ export const UnwrappedSelector = ({
   templates,
   employeeCV,
   handleCancelClick,
-  modalIsOpen,
+  isModalOpen,
 }) => (
   <StyledPage>
     <h1>CV Generator</h1>
@@ -46,12 +46,12 @@ export const UnwrappedSelector = ({
       />
       <GenerateCVButton data-button="generate-cv" />
     </div>
-    {employeeCV.length >= 1 && (
-      <Modal isOpen={modalIsOpen} title="Preview Document" bodyText={mockDataForModal.bodyText}>
+    {employeeCV && employeeCV.length > 0 ? (
+      <Modal isOpen={isModalOpen} title="Preview Document" bodyText={mockDataForModal.bodyText}>
         <CancelModalButton handleClick={handleCancelClick} />
         <DownloadModalButton />
       </Modal>
-    )}
+    ) : null}
   </StyledPage>
 );
 
@@ -75,7 +75,7 @@ UnwrappedSelector.propTypes = {
     }),
   ).isRequired,
   handleCancelClick: PT.func.isRequired,
-  modalIsOpen: PT.bool.isRequired,
+  isModalOpen: PT.bool.isRequired,
 };
 
 const WrappedSelector = container(UnwrappedSelector);
