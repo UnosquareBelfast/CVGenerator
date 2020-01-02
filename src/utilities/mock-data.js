@@ -11,7 +11,10 @@ export const mockDataForSelect = {
     { id: 3, label: 'Guitar Shop' },
     { id: 4, label: 'Piano Shop' },
   ],
-  templates: [{ id: 1, label: 'Unosquare Base' }, { id: 2, label: 'Unosquare Anonymous' }],
+  templates: [
+    { id: 1, label: 'Unosquare Base' },
+    { id: 2, label: 'Unosquare Anonymous' },
+  ],
 };
 
 export const mockDataForModal = {

@@ -11,34 +11,38 @@ const CVModalContainer = Wrapped =>
       employeeCV: PT.shape({ id: PT.number, label: PT.string }).isRequired,
     };
 
-    state = { cv: '' };
+    state = { cv: null };
 
     componentDidMount() {
-      fetchCV().then(data => this.setState({ modalIsOpen: false, cv: data }));
+      fetchCV().then(data => this.setState({ isModalOpen: false, cv: data }));
     }
 
     componentDidUpdate(prevProps) {
       const { employeeCV } = this.props;
       if (prevProps.employeeCV !== employeeCV) {
-        this.setState({ employeeCV, modalIsOpen: true });
+        this.setState({ employeeCV, isModalOpen: true });
       }
     }
 
     handleCancelModal = () => {
-      return this.setState({ modalIsOpen: false });
+      return this.setState({ isModalOpen: false });
     };
 
     render() {
-      const { employeeCV, modalIsOpen, cv } = this.state;
+      const { employeeCV, isModalOpen, cv } = this.state;
 
-      return (
-        <Wrapped
-          employeeCV={employeeCV}
-          handleCancelClick={this.handleCancelModal}
-          modalIsOpen={modalIsOpen}
-          cvData={cv}
-        />
-      );
+      if (employeeCV && employeeCV.length >= 1) {
+        return (
+          <Wrapped
+            employeeCV={employeeCV}
+            handleCancelClick={this.handleCancelModal}
+            isModalOpen={isModalOpen}
+            cvData={cv}
+          />
+        );
+      }
+
+      return null;
     }
   };
 
@@ -48,7 +52,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default compose(
-  connect(mapStateToProps),
-  CVModalContainer,
-);
+export default compose(connect(mapStateToProps), CVModalContainer);
