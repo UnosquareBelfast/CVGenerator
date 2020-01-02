@@ -23,7 +23,6 @@ module.exports = {
       Constants: path.resolve(__dirname, 'src/components/constants'),
       Actions: path.resolve(__dirname, 'src/store/actions'),
       Reducers: path.resolve(__dirname, 'src/store/reducers'),
-      SharedStyles: path.resolve(__dirname, 'src/shared-styles'),
     },
   },
   module: {
