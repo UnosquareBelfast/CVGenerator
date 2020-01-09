@@ -1,1 +1,1 @@
-export { selectEmployee, selectTemplate } from './selected-options';
+export { selectEmployee, selectTemplate, generateEmployeeCV } from './selected-options';

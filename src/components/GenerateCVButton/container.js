@@ -4,13 +4,17 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 
 import { getEmployee, getTemplate } from 'Reducers/selected-options';
+import { generateEmployeeCV } from 'Actions';
 
 const GenerateButtonContainer = Wrapped =>
   class extends React.Component {
     static propTypes = {
       selectedEmployee: PT.shape({ id: PT.number, label: PT.string }).isRequired,
       selectedTemplate: PT.shape({ id: PT.number, label: PT.string }).isRequired,
+      generateCV: PT.func.isRequired,
     };
+
+    state = { renderModal: false };
 
     isDisabled = () => {
       const { selectedEmployee, selectedTemplate } = this.props;
@@ -21,10 +25,10 @@ const GenerateButtonContainer = Wrapped =>
     };
 
     handleOnClick = () => {
-      const { selectedEmployee, selectedTemplate } = this.props;
+      const { selectedEmployee, selectedTemplate, generateCV } = this.props;
+
       // info that will eventually be sent to the backend in the POST
-      console.log('selected employee: ', selectedEmployee);
-      console.log('selectedTemplate: ', selectedTemplate);
+      generateCV(selectedEmployee, selectedTemplate);
     };
 
     render() {
@@ -39,4 +43,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default compose(connect(mapStateToProps), GenerateButtonContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    generateCV: (selectedEmployee, selectedTemplate) =>
+      dispatch(generateEmployeeCV(selectedEmployee, selectedTemplate)),
+  };
+};
+
+export default compose(connect(mapStateToProps, mapDispatchToProps), GenerateButtonContainer);

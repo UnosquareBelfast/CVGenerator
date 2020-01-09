@@ -7,11 +7,18 @@ import container from './container';
 
 import StyledPage from './styled';
 
-const Selector = ({ employees, templates }) => (
+export const UnwrappedSelector = ({
+  employees,
+  templates,
+  employeeCV,
+  handleCancelClick,
+  isModalOpen,
+}) => (
   <StyledPage>
     <h1>CV Generator</h1>
     <div className="selectComponents">
       <Select
+        data-select="select"
         text="Employee"
         isRequired
         name="selectComponentEmployee"
@@ -20,6 +27,7 @@ const Selector = ({ employees, templates }) => (
         options={employees}
       />
       <Select
+        data-select="client"
         text="Client"
         isRequired
         name="selectComponentClient"
@@ -28,6 +36,7 @@ const Selector = ({ employees, templates }) => (
         options={mockDataForSelect.clients}
       />
       <Select
+        data-select="template"
         text="Template"
         isRequired
         name="selectComponentTemplate"
@@ -35,16 +44,18 @@ const Selector = ({ employees, templates }) => (
         isDisabled={false}
         options={templates}
       />
-      <GenerateCVButton />
+      <GenerateCVButton data-button="generate-cv" />
     </div>
-    <Modal isOpen title="Preview Document" bodyText={mockDataForModal.bodyText}>
-      <CancelModalButton />
-      <DownloadModalButton />
-    </Modal>
+    {employeeCV && employeeCV.length > 0 ? (
+      <Modal isOpen={isModalOpen} title="Preview Document" bodyText={mockDataForModal.bodyText}>
+        <CancelModalButton handleClick={handleCancelClick} />
+        <DownloadModalButton />
+      </Modal>
+    ) : null}
   </StyledPage>
 );
 
-Selector.propTypes = {
+UnwrappedSelector.propTypes = {
   employees: PT.arrayOf(
     PT.shape({
       id: PT.number,
@@ -57,6 +68,16 @@ Selector.propTypes = {
       label: PT.string,
     }),
   ).isRequired,
+  employeeCV: PT.arrayOf(
+    PT.shape({
+      id: PT.number,
+      label: PT.string,
+    }),
+  ).isRequired,
+  handleCancelClick: PT.func.isRequired,
+  isModalOpen: PT.bool.isRequired,
 };
 
-export default container(Selector);
+const WrappedSelector = container(UnwrappedSelector);
+
+export default WrappedSelector;

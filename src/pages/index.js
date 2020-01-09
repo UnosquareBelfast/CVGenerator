@@ -1,3 +1,3 @@
-import Selector from './Selector';
+import WrappedSelector from './Selector';
 
-export default Selector;
+export default WrappedSelector;
