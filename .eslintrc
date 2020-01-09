@@ -31,6 +31,7 @@
         "react/state-in-constructor": [2, "never"],
         "react/static-property-placement": "off",
         "react/display-name": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "react/prefer-stateless-function": "off"
     }
 }
