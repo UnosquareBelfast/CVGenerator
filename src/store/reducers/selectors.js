@@ -1,5 +1,5 @@
-import { EMPLOYEES, TEMPLATES, GENERATE_CV } from 'Actions/action-types';
-import { selectedOptionsReducer, selectedItemsReducer } from './selected-options';
+import { EMPLOYEES, TEMPLATES, GENERATE_CV } from 'Actions/actionTypes';
+import { selectedOptionsReducer, selectedItemsReducer } from './selectedOptions';
 
 export const getEmployee = store => selectedOptionsReducer.getEmployee(store[EMPLOYEES]);
 export const getTemplate = store => selectedOptionsReducer.getTemplate(store[TEMPLATES]);

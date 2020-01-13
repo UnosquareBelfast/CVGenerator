@@ -3,7 +3,7 @@ import { PropTypes as PT } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
-import { getEmployee, getTemplate } from 'Reducers/selected-options';
+import { getEmployee, getTemplate } from 'Reducers/selectedOptions';
 import { generateEmployeeCV } from 'Actions';
 
 const GenerateButtonContainer = Wrapped =>

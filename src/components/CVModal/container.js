@@ -3,7 +3,7 @@ import { PropTypes as PT } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchCV } from 'Services';
-import { getSelectedValues } from 'Reducers/selected-options';
+import { getSelectedValues } from 'Reducers/selectedOptions';
 
 const CVModalContainer = Wrapped =>
   class extends React.Component {
@@ -11,10 +11,10 @@ const CVModalContainer = Wrapped =>
       selectedValues: PT.shape({ id: PT.number, label: PT.string }).isRequired,
     };
 
-    state = { cv: null };
+    state = { cvURL: null };
 
     componentDidMount() {
-      fetchCV().then(data => this.setState({ isModalOpen: false, cv: data }));
+      fetchCV().then(data => this.setState({ isModalOpen: false, cvURL: data }));
     }
 
     componentDidUpdate(prevProps) {
@@ -24,20 +24,18 @@ const CVModalContainer = Wrapped =>
       }
     }
 
-    handleCancelModal = () => {
-      return this.setState({ isModalOpen: false });
-    };
+    handleCancelModal = () => this.setState({ isModalOpen: false });
 
     render() {
-      const { selectedValues, isModalOpen, cv } = this.state;
+      const { selectedValues, isModalOpen, cvURL } = this.state;
 
-      if (selectedValues && selectedValues.length >= 1) {
+      if (selectedValues && selectedValues.length > 0) {
         return (
           <Wrapped
             selectedValues={selectedValues}
             handleCancelClick={this.handleCancelModal}
             isModalOpen={isModalOpen}
-            cvData={cv}
+            cvData={cvURL}
           />
         );
       }

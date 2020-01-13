@@ -37,13 +37,7 @@ export const StyledModal = styled(ReactModalAdapter)`
           height: 100%;
           margin: 20px;
         }
-      }
-
-      // @media ${device.tabletS} {
-      //   .modal-content: {
-      //     height: 90%;
-      //   }
-      // }
+      }xw
     }
     @media ${device.mobileXS} {
       top: 100px;

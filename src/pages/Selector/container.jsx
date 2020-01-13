@@ -3,7 +3,7 @@ import { PropTypes as PT } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchUsers, fetchTemplates } from 'Services';
-import { getSelectedValues } from 'Reducers/selected-options';
+import { getSelectedValues } from 'Reducers/selectedOptions';
 
 import { transformEmployees, transformTemplates } from './transform';
 
@@ -48,7 +48,6 @@ const SelectorContainer = Wrapped =>
   };
 
 const mapStateToProps = state => {
-  console.log('state: ', state);
   return {
     selectedValues: getSelectedValues(state.GENERATE_CV),
   };
