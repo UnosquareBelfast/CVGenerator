@@ -24,21 +24,6 @@ export const StyledModal = styled(ReactModalAdapter)`
       height: 80%;
     }
 
-    .modal-content {
-      height: 100%;
-      .cv-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 60%;
-        width: 100%;
-        object {
-          width: 90%;
-          height: 100%;
-          margin: 20px;
-        }
-      }xw
-    }
     @media ${device.mobileXS} {
       top: 100px;
       left: 20px;
@@ -50,20 +35,7 @@ export const StyledModal = styled(ReactModalAdapter)`
       right: 40px;
     }
   }
-  .button-bar {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 40%;
-    @media ${device.tabletS} {
-      flex-direction: row;
-      margin: 0;
-      button {
-        max-width: 160px;
-      }
-    }
-  }
+
   h1 {
     border-bottom: ${({ theme }) => theme.borders.borderGrey};
     padding-bottom: 10px;
