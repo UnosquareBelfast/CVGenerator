@@ -8,6 +8,7 @@ export const theme = {
     errorRed: '#ff0000',
     focusedGrey: '#ddd',
     unfocusedWhite: 'rgba(255, 255, 255, 0.75)',
+    overlayGrey: 'rgba(68, 68, 68, 0.75)',
     fontBlack: '#000',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
@@ -16,6 +17,7 @@ export const theme = {
   },
   borders: {
     borderGrey: '2px solid grey',
+    borderLightGrey: '2px solid #C2C5CC',
     borderModal: '1px solid #ccc',
   },
   fonts: {

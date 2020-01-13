@@ -1,19 +1,13 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
-import { Select, Modal } from 'Common';
-import { mockDataForSelect, mockDataForModal } from 'Utilities';
-import { GenerateCVButton, CancelModalButton, DownloadModalButton } from 'Components';
+import { Select } from 'Common';
+import { mockDataForSelect } from 'Utilities';
+import { GenerateCVButton, CVModal } from 'Components';
 import container from './container';
 
 import StyledPage from './styled';
 
-export const UnwrappedSelector = ({
-  employees,
-  templates,
-  employeeCV,
-  handleCancelClick,
-  isModalOpen,
-}) => (
+export const UnwrappedSelector = ({ employees, templates }) => (
   <StyledPage>
     <h1>CV Generator</h1>
     <div className="selectComponents">
@@ -46,12 +40,7 @@ export const UnwrappedSelector = ({
       />
       <GenerateCVButton data-button="generate-cv" />
     </div>
-    {employeeCV && employeeCV.length > 0 ? (
-      <Modal isOpen={isModalOpen} title="Preview Document" bodyText={mockDataForModal.bodyText}>
-        <CancelModalButton handleClick={handleCancelClick} />
-        <DownloadModalButton />
-      </Modal>
-    ) : null}
+    <CVModal />
   </StyledPage>
 );
 
@@ -68,14 +57,6 @@ UnwrappedSelector.propTypes = {
       label: PT.string,
     }),
   ).isRequired,
-  employeeCV: PT.arrayOf(
-    PT.shape({
-      id: PT.number,
-      label: PT.string,
-    }),
-  ).isRequired,
-  handleCancelClick: PT.func.isRequired,
-  isModalOpen: PT.bool.isRequired,
 };
 
 const WrappedSelector = container(UnwrappedSelector);

@@ -9,28 +9,51 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: ${({ theme }) => theme.colors.unfocusedWhite};
+    background-color: ${({ theme }) => theme.colors.overlayGrey};
+    overflow: scroll;
   }
   &__content {
     position: absolute;
-    border: ${({ theme }) => theme.borders.borderModal};
     background: #fff;
-    overflow: auto;
     outline: none;
-    padding: 20px;
+    border-radius: 10px;
+    height: 90%;
+    margin-bottom: 50px;
 
-    @media ${device.mobileXS} {
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
+    div {
+      height: 80%;
     }
 
+    .modal-content {
+      height: 100%;
+      .cv-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+        width: 100%;
+        object {
+          width: 90%;
+          height: 100%;
+          margin: 20px;
+        }
+      }
+
+      // @media ${device.tabletS} {
+      //   .modal-content: {
+      //     height: 90%;
+      //   }
+      // }
+    }
+    @media ${device.mobileXS} {
+      top: 100px;
+      left: 20px;
+      right: 20px;
+      bottom: 80px;
+    }
     @media ${device.tabletS} {
-      top: 40px;
       left: 40px;
       right: 40px;
-      bottom: 40px;
     }
   }
   .button-bar {
@@ -38,10 +61,10 @@ export const StyledModal = styled(ReactModalAdapter)`
     display: flex;
     justify-content: center;
     flex-direction: column;
-
+    height: 40%;
     @media ${device.tabletS} {
       flex-direction: row;
-      margin: 38px 38px 0 38px;
+      margin: 0;
       button {
         max-width: 160px;
       }
@@ -50,6 +73,7 @@ export const StyledModal = styled(ReactModalAdapter)`
   h1 {
     border-bottom: ${({ theme }) => theme.borders.borderGrey};
     padding-bottom: 10px;
+    text-align: center;
   }
 `;
 
