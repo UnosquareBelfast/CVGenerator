@@ -9,7 +9,10 @@ describe('Select component', () => {
   beforeEach(() => {
     wrapper = shallow(
       <Selector
-        employeeCV={[{ id: 2, label: 'Bushmills, Robert' }, { id: 2, label: 'cvtemplate' }]}
+        employeeCV={[
+          { id: 2, label: 'Bushmills, Robert' },
+          { id: 2, label: 'cvtemplate' },
+        ]}
       />,
     );
   });

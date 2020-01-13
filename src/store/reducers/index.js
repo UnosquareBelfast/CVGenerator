@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { selectedOptionsReducer, selectedItemsReducer } from './selected-options';
+import { selectedOptionsReducer, selectedItemsReducer } from './selectedOptions';
 
 const EMPLOYEES = 'EMPLOYEES';
 const TEMPLATES = 'TEMPLATES';

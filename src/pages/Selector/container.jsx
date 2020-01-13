@@ -3,17 +3,19 @@ import { PropTypes as PT } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { fetchUsers, fetchTemplates } from 'Services';
-import { getSelectedValues } from 'Reducers/selected-options';
+import { getSelectedValues } from 'Reducers/selectedOptions';
 
 import { transformEmployees, transformTemplates } from './transform';
 
 const SelectorContainer = Wrapped =>
   class extends React.Component {
     static propTypes = {
-      employeeCV: PT.shape({ id: PT.number, label: PT.string }).isRequired,
+      selectedEmployee: PT.shape({ id: PT.number, label: PT.string }).isRequired,
+      selectedTemplate: PT.shape({ id: PT.number, label: PT.string }).isRequired,
+      selectedValues: PT.shape({ id: PT.number, label: PT.string }).isRequired,
     };
 
-    state = { employees: [], templates: [], employeeCV: [], isModalOpen: false };
+    state = { employees: [], templates: [], selectedValues: [], isModalOpen: false };
 
     componentDidMount() {
       fetchUsers().then(employees => this.setState({ employees }));
@@ -21,23 +23,23 @@ const SelectorContainer = Wrapped =>
     }
 
     componentDidUpdate(prevProps) {
-      const { employeeCV } = this.props;
+      const { selectedValues } = this.props;
 
-      if (prevProps.employeeCV !== employeeCV) {
-        this.setState({ employeeCV, isModalOpen: true });
+      if (prevProps.selectedValues !== selectedValues) {
+        this.setState({ selectedValues, isModalOpen: true });
       }
     }
 
     handleCancelModal = () => this.setState({ isModalOpen: false });
 
     render() {
-      const { employees, templates, employeeCV, isModalOpen } = this.state;
+      const { employees, templates, selectedValues, isModalOpen } = this.state;
 
       return (
         <Wrapped
           employees={transformEmployees(employees)}
           templates={transformTemplates(templates)}
-          employeeCV={employeeCV}
+          selectedValues={selectedValues}
           handleCancelClick={this.handleCancelModal}
           isModalOpen={isModalOpen}
         />
@@ -47,7 +49,7 @@ const SelectorContainer = Wrapped =>
 
 const mapStateToProps = state => {
   return {
-    employeeCV: getSelectedValues(state.GENERATE_CV),
+    selectedValues: getSelectedValues(state.GENERATE_CV),
   };
 };
 

@@ -9,47 +9,37 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: ${({ theme }) => theme.colors.unfocusedWhite};
+    background-color: ${({ theme }) => theme.colors.overlayGrey};
+    overflow: scroll;
   }
   &__content {
     position: absolute;
-    border: ${({ theme }) => theme.borders.borderModal};
     background: #fff;
-    overflow: auto;
     outline: none;
-    padding: 20px;
+    border-radius: 10px;
+    height: 90%;
+    margin-bottom: 50px;
+
+    div {
+      height: 80%;
+    }
 
     @media ${device.mobileXS} {
-      top: 20px;
+      top: 100px;
       left: 20px;
       right: 20px;
-      bottom: 20px;
+      bottom: 80px;
     }
-
     @media ${device.tabletS} {
-      top: 40px;
       left: 40px;
       right: 40px;
-      bottom: 40px;
     }
   }
-  .button-bar {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 
-    @media ${device.tabletS} {
-      flex-direction: row;
-      margin: 38px 38px 0 38px;
-      button {
-        max-width: 160px;
-      }
-    }
-  }
   h1 {
     border-bottom: ${({ theme }) => theme.borders.borderGrey};
     padding-bottom: 10px;
+    text-align: center;
   }
 `;
 

@@ -6,16 +6,15 @@ const ModalContainer = Wrapped =>
     static propTypes = {
       isOpen: PT.bool.isRequired,
       title: PT.string.isRequired,
-      bodyText: PT.string.isRequired,
       children: PT.oneOfType([PT.array, PT.object]).isRequired,
       className: PT.string.isRequired,
     };
 
     render() {
-      const { isOpen, title, bodyText, children, className } = this.props;
+      const { isOpen, title, children, className } = this.props;
 
       return (
-        <Wrapped isOpen={isOpen} title={title} bodyText={bodyText} className={className}>
+        <Wrapped isOpen={isOpen} title={title} className={className}>
           {children}
         </Wrapped>
       );

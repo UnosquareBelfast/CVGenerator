@@ -1,4 +1,5 @@
-import { fetchUsers } from './user-service';
-import { fetchTemplates } from './template-service';
+import { fetchUsers } from './userService';
+import { fetchTemplates } from './templateService';
+import { fetchCV } from './generateCVService';
 
-export { fetchUsers, fetchTemplates };
+export { fetchUsers, fetchTemplates, fetchCV };
