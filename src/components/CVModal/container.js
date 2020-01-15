@@ -11,7 +11,7 @@ const CVModalContainer = Wrapped =>
       selectedValues: PT.shape({ id: PT.number, label: PT.string }).isRequired,
     };
 
-    state = { cvURL: null };
+    state = { cvURL: null, isModalOpen: false };
 
     componentDidMount() {
       fetchCV().then(data => this.setState({ isModalOpen: false, cvURL: data }));

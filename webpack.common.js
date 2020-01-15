@@ -25,6 +25,11 @@ module.exports = {
       Reducers: path.resolve(__dirname, 'src/store/reducers'),
     },
   },
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:8085',
+    },
+  },
   module: {
     rules: [
       {
