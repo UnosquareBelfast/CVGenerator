@@ -7,7 +7,7 @@ import container from './container';
 export const CVModal = ({ handleCancelClick, isModalOpen, cvData }) => (
   <Modal isOpen={isModalOpen} title="Preview Document">
     <CVModalContent cvData={cvData} />
-    <CVModalButtonBar handleCancelClick={handleCancelClick} />
+    <CVModalButtonBar handleCancelClick={handleCancelClick} cvData={cvData} />
   </Modal>
 );
 
