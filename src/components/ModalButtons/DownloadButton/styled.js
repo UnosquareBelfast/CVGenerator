@@ -8,7 +8,7 @@ const StyledDownloadButton = styled.a`
   text-decoration: none;
   background: ${({ theme }) => theme.colors.buttonBlue};
   border-radius: 5px;
-  color: white;
+  color: ${({ theme }) => theme.colors.fontWhite};
   font-family: ${({ theme }) => theme.fonts.fallback};
   font-size: 18px;
   margin: 38px;

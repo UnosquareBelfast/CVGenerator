@@ -4,17 +4,17 @@ import { CVModalButtonBar, CVModalContent } from 'Components';
 import { Modal } from 'Common';
 import container from './container';
 
-export const CVModal = ({ handleCancelClick, isModalOpen, cvData }) => (
+export const CVModal = ({ handleCancelClick, isModalOpen, cvURL }) => (
   <Modal isOpen={isModalOpen} title="Preview Document">
-    <CVModalContent cvData={cvData} />
-    <CVModalButtonBar handleCancelClick={handleCancelClick} cvData={cvData} />
+    <CVModalContent cvURL={cvURL} />
+    <CVModalButtonBar handleCancelClick={handleCancelClick} cvURL={cvURL} />
   </Modal>
 );
 
 CVModal.propTypes = {
   handleCancelClick: PT.func.isRequired,
   isModalOpen: PT.bool.isRequired,
-  cvData: PT.func.isRequired,
+  cvURL: PT.func.isRequired,
 };
 
 export default container(CVModal);

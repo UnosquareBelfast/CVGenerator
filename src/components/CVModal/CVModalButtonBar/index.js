@@ -3,16 +3,16 @@ import { PropTypes as PT } from 'prop-types';
 import { CancelModalButton, DownloadModalButton } from 'Components';
 import StyledButtonBar from './styled';
 
-export const CVModalButtonBar = ({ handleCancelClick, cvData }) => (
+export const CVModalButtonBar = ({ handleCancelClick, cvURL }) => (
   <StyledButtonBar>
     <CancelModalButton handleClick={handleCancelClick} />
-    <DownloadModalButton cvData={cvData} />
+    <DownloadModalButton cvURL={cvURL} />
   </StyledButtonBar>
 );
 
 CVModalButtonBar.propTypes = {
   handleCancelClick: PT.func.isRequired,
-  cvData: PT.string.isRequired,
+  cvURL: PT.string.isRequired,
 };
 
 export default CVModalButtonBar;
