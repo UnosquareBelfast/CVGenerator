@@ -1,9 +1,10 @@
-const hostname = 'http://localhost:8081/api';
+const hostname8081 = 'http://localhost:8081/api';
+const hostname8085 = 'http://localhost:8085/api';
 
 const endpoints = {
   users: '/users',
   templates: '/templates',
-  generatepdf: '/generatepdf?userId=1&templateId=2', // hardcoded (api is POC)
+  generatepdf: '/getPDF', // hardcoded (api is POC)
 };
 
 export const apiJsonHeader = {
@@ -11,8 +12,8 @@ export const apiJsonHeader = {
   Accept: 'application/json',
 };
 
-export const usersEndpoint = `${hostname}${endpoints.users}`;
-export const templatesEndpoint = `${hostname}${endpoints.templates}`;
-export const generatepdfEndpoint = `${hostname}${endpoints.generatepdf}`;
+export const usersEndpoint = `${hostname8081}${endpoints.users}`;
+export const templatesEndpoint = `${hostname8081}${endpoints.templates}`;
+export const generatepdfEndpoint = `${hostname8085}${endpoints.generatepdf}`;
 
 export default usersEndpoint;
