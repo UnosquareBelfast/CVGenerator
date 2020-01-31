@@ -35,7 +35,7 @@ const CVModalContainer = Wrapped =>
             selectedValues={selectedValues}
             handleCancelClick={this.handleCancelModal}
             isModalOpen={isModalOpen}
-            cvData={cvURL}
+            cvURL={cvURL}
           />
         );
       }

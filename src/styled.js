@@ -10,6 +10,7 @@ export const theme = {
     unfocusedWhite: 'rgba(255, 255, 255, 0.75)',
     overlayGrey: 'rgba(68, 68, 68, 0.75)',
     fontBlack: '#000',
+    fontWhite: '#FFF',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
     buttonBlue: '#24A0ED',
