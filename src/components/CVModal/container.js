@@ -13,14 +13,12 @@ const CVModalContainer = Wrapped =>
 
     state = { cvURL: null, isModalOpen: false };
 
-    componentDidMount() {
-      fetchCV().then(data => this.setState({ isModalOpen: false, cvURL: data }));
-    }
-
     componentDidUpdate(prevProps) {
       const { selectedValues } = this.props;
+
       if (prevProps.selectedValues !== selectedValues) {
         this.setState({ selectedValues, isModalOpen: true });
+        fetchCV().then(data => this.setState({ isModalOpen: true, cvURL: data }));
       }
     }
 
@@ -29,18 +27,14 @@ const CVModalContainer = Wrapped =>
     render() {
       const { selectedValues, isModalOpen, cvURL } = this.state;
 
-      if (selectedValues && selectedValues.length > 0) {
-        return (
-          <Wrapped
-            selectedValues={selectedValues}
-            handleCancelClick={this.handleCancelModal}
-            isModalOpen={isModalOpen}
-            cvURL={cvURL}
-          />
-        );
-      }
-
-      return null;
+      return (
+        <Wrapped
+          selectedValues={selectedValues}
+          handleCancelClick={this.handleCancelModal}
+          isModalOpen={isModalOpen}
+          cvURL={cvURL}
+        />
+      );
     }
   };
 
