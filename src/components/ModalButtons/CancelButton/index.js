@@ -10,6 +10,7 @@ const CancelButton = ({ handleClick, className }) => (
     handleClick={handleClick}
     disabled={false}
     className={className}
+    buttonClass="secondary"
   />
 );
 

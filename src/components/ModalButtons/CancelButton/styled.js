@@ -4,13 +4,22 @@ import { device } from 'Themes';
 
 const StyledCancelButton = styled(Button)`
   background: transparent;
-  border: ${({ theme }) => theme.colors.fontGrey} solid 2px;
-  color: ${({ theme }) => theme.colors.fontGrey};
   width: 90%;
-  margin-bottom: 0;
+  margin: 20px 38px 20px 38px;
+  padding-left: 0;
+  padding-right: 0;
+
+  @media ${device.desktopS} {
+    margin: 38px 30px 20px 38px;
+    max-width: 400px;
+    min-width: 250px;
+    width: 100%;
+  }
 
   @media ${device.tabletS} {
-    margin-bottom: 38px;
+    margin: 20px 20px 20px 38px;
+    max-width: 400px;
+    min-width: 175px;
     width: 100%;
   }
 `;

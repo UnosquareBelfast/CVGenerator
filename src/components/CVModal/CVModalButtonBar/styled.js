@@ -4,17 +4,16 @@ import { device } from 'Themes';
 const StyledButtonBar = styled.div`
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
-  height: 30% !important;
+  height: 40% !important;
 
   @media ${device.tabletS} {
     flex-direction: row;
-    margin: 0;
-    button,
-    a {
-      max-width: 160px;
-    }
+    justify-content: center;
+    height: 30% !important;
+    width: 90%;
+    margin: 50px 5% 0px;
   }
 `;
 

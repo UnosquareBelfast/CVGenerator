@@ -7,7 +7,7 @@ import WrappedSelector from 'Pages';
 import { GlobalStyle, theme } from './styled';
 
 const App = () => (
-  <div>
+  <div className="application">
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <WrappedSelector />
