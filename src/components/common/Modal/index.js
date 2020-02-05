@@ -4,7 +4,7 @@ import { StyledModal } from './styled';
 
 const Modal = ({ isOpen, title, children }) => {
   return (
-    <StyledModal isOpen={isOpen} title={title}>
+    <StyledModal isOpen={isOpen} title={title} data-modal="modal">
       <div>{children}</div>
     </StyledModal>
   );

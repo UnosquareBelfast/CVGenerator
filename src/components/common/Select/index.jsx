@@ -5,7 +5,7 @@ import { Label } from 'Common';
 import container from './container';
 import { StyledSelect, SelectMenuStyles } from './styled';
 
-const SelectComponent = ({
+export const SelectComponent = ({
   selected,
   handleOnChange,
   text,
@@ -15,7 +15,7 @@ const SelectComponent = ({
   options,
   isDisabled,
 }) => (
-  <StyledSelect>
+  <StyledSelect data-select="styled-select">
     <Label text={text} isRequired={isRequired} />
     <Select
       styles={SelectMenuStyles}
@@ -25,6 +25,7 @@ const SelectComponent = ({
       options={options}
       onChange={handleOnChange}
       value={selected}
+      data-select="select"
     />
   </StyledSelect>
 );

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { selectFields } from 'Constants';
 import { selectEmployee, selectTemplate } from 'Actions';
 
-const SelectContainer = Wrapped =>
+export const SelectContainer = Wrapped =>
   class extends React.Component {
     static propTypes = {
       text: PT.string.isRequired,
@@ -37,7 +37,7 @@ const SelectContainer = Wrapped =>
     handleSelected = () => {
       const { selected } = this.state;
       const { name, selectedEmployee, selectedTemplate } = this.props;
-
+      console.log('selected: ', selected);
       if (name === selectFields.EMPLOYEE) {
         selectedEmployee(selected);
       }
