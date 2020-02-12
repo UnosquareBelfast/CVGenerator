@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
 import { buttonTypes } from 'Constants';
+import BUTTON_TYPE from 'CommonConstants';
 import container from './container';
 import StyledGenerateCVButton from './styled';
 
@@ -11,7 +12,7 @@ const GenerateButton = ({ disabled, handleClick }) => {
       disabled={disabled}
       type={buttonTypes.SUBMIT}
       handleClick={handleClick}
-      buttonClass="primary"
+      buttonType={BUTTON_TYPE.PRIMARY}
     />
   );
 };

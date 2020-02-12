@@ -102,7 +102,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${theme.colors.backgroundGrey};
   }
 
-  .application {
+  #root {
     display: flex;
     justify-content: center;
     align-items: center;

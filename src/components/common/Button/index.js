@@ -1,11 +1,12 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
+import BUTTON_TYPE from 'CommonConstants';
 import { StyledPrimaryButton, StyledSecondaryButton } from './styled';
 
-const Button = ({ value, disabled, handleClick, type, className, buttonClass }) => {
+const Button = ({ value, disabled, handleClick, type, className, buttonType }) => {
   // eslint issue - https://github.com/yannickcr/eslint-plugin-react/issues/1555
   /* eslint-disable react/button-has-type */
-  if (buttonClass === 'primary') {
+  if (buttonType === BUTTON_TYPE.PRIMARY) {
     return (
       <StyledPrimaryButton
         type={type}
@@ -18,7 +19,7 @@ const Button = ({ value, disabled, handleClick, type, className, buttonClass }) 
     );
   }
 
-  if (buttonClass === 'secondary') {
+  if (buttonType === BUTTON_TYPE.SECONDARY) {
     return (
       <StyledSecondaryButton
         type={type}
@@ -41,7 +42,7 @@ Button.propTypes = {
   handleClick: PT.func.isRequired,
   type: PT.oneOf(['submit', 'button']).isRequired,
   className: PT.string.isRequired,
-  buttonClass: PT.oneOf(['primary', 'secondary']).isRequired,
+  buttonType: PT.oneOf(['primary', 'secondary']).isRequired,
 };
 
 export default Button;
