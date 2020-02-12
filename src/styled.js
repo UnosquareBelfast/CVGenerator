@@ -3,18 +3,37 @@ import { createGlobalStyle } from 'styled-components';
 export const theme = {
   colors: {
     green: '#67db7e',
+    button: {
+      blue: {
+        normal: '#608CFF',
+        hover: '#7198ff',
+        clicked: '#5081FF',
+      },
+      grey: {
+        normal: '#919191',
+      },
+      disabled: {
+        background: '#C4C4C4',
+        font: '#919191',
+      },
+    },
     blue: '#67b7db',
     yellow: '#65db67',
     errorRed: '#ff0000',
     focusedGrey: '#ddd',
     unfocusedWhite: 'rgba(255, 255, 255, 0.75)',
     overlayGrey: 'rgba(68, 68, 68, 0.75)',
+    shadowGrey: 'rgba(143,137,143,0.6)',
+    shadowButton: '0px 4px 20px rgba(0,3,138,.25)',
+    shadowTile: `4px 5px 17px 1px rgba(143,137,143,0.6)`,
     fontBlack: '#000',
     fontWhite: '#FFF',
     backgroundWhite: '#fff',
     backgroundGrey: '#eee',
-    buttonBlue: '#24A0ED',
-    fontGrey: '#666',
+  },
+  effects: {
+    transform: 'scale(.97)',
+    transition: 'width .3s, height .3s',
   },
   borders: {
     borderGrey: '2px solid grey',
@@ -36,6 +55,7 @@ export const theme = {
     },
     weight: {
       regular: 400,
+      medium: 500,
       bold: 600,
     },
   },
@@ -66,14 +86,29 @@ export const device = {
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    display: table-cell;
     font-family: "Varela Round", sans-serif;
     font-size: 19px;
     line-height: 25px;
     margin: 0;
+    vertical-align: middle;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    display: table;
+    margin: auto;
+    background-color: ${theme.colors.backgroundGrey};
+  }
+
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   h1 {
-    font-size: 35px;
     letter-spacing: 4px;
     margin-top: 50px;
 

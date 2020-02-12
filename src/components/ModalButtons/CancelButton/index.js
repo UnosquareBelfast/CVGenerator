@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes as PT } from 'prop-types';
 import { buttonTypes } from 'Constants';
+import BUTTON_TYPE from 'CommonConstants';
 import StyledCancelButton from './styled';
 
 const CancelButton = ({ handleClick, className }) => (
@@ -10,6 +11,7 @@ const CancelButton = ({ handleClick, className }) => (
     handleClick={handleClick}
     disabled={false}
     className={className}
+    buttonType={BUTTON_TYPE.SECONDARY}
   />
 );
 
